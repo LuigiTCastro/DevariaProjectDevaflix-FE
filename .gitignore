@@ -1,0 +1,18 @@
+# Arquivos gerados por IDEs e editores
+.vscode/
+.idea/
+
+# Módulos e pacotes gerados pelo Node.js
+node_modules/
+package-lock.json
+
+# Arquivos de build e output
+dist/
+build/
+
+# Arquivos de configuração sensíveis
+.env
+
+# Logs e arquivos temporários
+logs/
+temp/
