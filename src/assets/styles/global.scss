@@ -1,0 +1,182 @@
+@import './configs.scss';
+
+
+@font-face {
+    font-family: $FontRegular;
+    src: url('../fonts/BiennaleRegular.otf');
+}
+
+@font-face {
+    font-family: $FontBold;
+    src: url('../fonts/BiennaleBold.otf');
+}
+
+@font-face {
+    font-family: $FontLight;
+    src: url('../fonts/BiennaleLight.otf');
+}
+
+* {
+    font-family: $FontRegular;
+    font-size: 14px;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+#root {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    padding: 0;
+    
+}
+
+input {
+    font-size: 16px;
+    letter-spacing: 0.01em;
+    color: $GreyColor1;
+    border-radius: 0;
+    border: none;
+    outline: none;
+
+    &.focus {
+        border-color: $PrimaryColor;
+    }
+
+    &::placeholder {
+        color: $GreyColor2;
+        opacity: 1;
+    }
+
+    &:-ms-input-placeholder {
+        color: $GreyColor2;
+    }
+
+    &::-ms-input-placeholder {
+        color: $GreyColor2;
+    }
+}
+
+button {
+    margin-top: 30px;
+    width: 100%;
+    height: 48px;
+    background-color: $PrimaryColor;
+    border: none;
+    color: $PrimaryColor5;
+    border-radius: 8px;
+    font-size: 17px;
+    cursor: pointer;
+    
+   
+    @media screen and (min-width: $DesktopBreakpoint) {
+        background-color: $PrimaryColorWithOpacity;
+        color: $PrimaryColor;
+
+        &:hover{
+            background-color: $PrimaryColor;
+            color: $PrimaryColor5;
+        }
+
+        &.disabled{
+            cursor: not-allowed;
+
+            &:hover{
+                background-color: $PrimaryColorWithOpacity;
+            }
+        }
+    }   
+
+}
+
+.BtnCadastro{
+    background-color: $PrimaryColor3;
+
+    @media screen and (min-width: $DesktopBreakpoint) {
+        background-color: $PrimaryColorWithOpacity;
+        color: $PrimaryColor;
+
+        &:hover{
+            background-color: $PrimaryColor3;
+            color: $PrimaryColor5;
+        }
+
+        &.disabled{
+            cursor: not-allowed;
+
+            &:hover{
+                background-color: $PrimaryColorWithOpacity;
+            }
+        }
+    }   
+    
+  }
+
+
+
+.avatar {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid $PrimaryColor;
+
+    img {
+        border-radius: 50%;
+        width: 120px;
+        height: 118px;
+        object-fit: contain;
+    }
+
+    span {
+        display: none;
+    }
+}
+
+.oculto {
+    display: none !important;
+}
+
+body {
+    @media screen and (min-width: $DesktopBreakpoint) {
+        background-color: $PrimaryColorWithOpacity;
+        background-image: url('../images/background.svg');
+        background-size: cover;
+    }
+}
+
+.scroll {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 60%;
+    overflow-x: scroll;
+    align-items: flex-end;
+    justify-content: flex-start;
+
+    &::-webkit-scrollbar{
+        width: 6px;
+    }
+
+    &::-webkit-scrollbar-track{
+        background: $PrimaryColorWithOpacity;
+    }
+
+    &::-webkit-scrollbar-thumb{
+        background: $PrimaryColor;
+        border-radius: 8px;
+    }
+}
+
+@import './public.scss';
+@import './login.scss';
