@@ -3,6 +3,7 @@ import iconEmail from '../assets/imagens/imgEmail.svg';
 import iconChave from '../assets/imagens/imgChave.svg';
 import { PublicInput } from '../components/General/PublicInput';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 
 export const Login = () => {
@@ -26,7 +27,7 @@ export const Login = () => {
 
             <div className='link'>
                     <p> Não possui uma conta? </p>
-                    <a href='/register'> Faça seu cadastro agora!</a>
+                    <Link to='/register'> Faça seu cadastro agora!</Link>
                 </div>
         </form>    
      </div>

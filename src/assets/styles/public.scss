@@ -8,17 +8,21 @@
     align-items: center;
     justify-content: center;
 
-    &.register{
-        .logo{
-            display: none;
-        }
-    }
 
     .logo {
         margin-bottom: 20px;
         height: 30%;
         max-width: 260px;
     }
+
+    
+    &.register{
+        .logo{
+            display: none;
+        }
+    }
+
+   
 
     p {
         text-align: center;

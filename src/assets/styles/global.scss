@@ -133,10 +133,12 @@ button {
 
     img {
         border-radius: 50%;
-        width: 120px;
-        height: 118px;
+        width: 137px;
+        height: 137px;
         object-fit: contain;
     }
+
+ 
 
     span {
         display: none;
@@ -149,9 +151,9 @@ button {
 
 body {
     @media screen and (min-width: $DesktopBreakpoint) {
-        background-color: $PrimaryColorWithOpacity;
-        background-image: url('../images/background.svg');
-        background-size: cover;
+        //background-color: $PrimaryColorWithOpacity;
+       // background-image: url('../images/background.svg');
+       // background-size: cover;
     }
 }
 
@@ -179,4 +181,5 @@ body {
 }
 
 @import './public.scss';
-@import './login.scss';
+@import './InputAvatar.scss';
+
