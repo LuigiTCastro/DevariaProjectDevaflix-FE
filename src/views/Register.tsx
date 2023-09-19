@@ -1,3 +1,4 @@
+
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import logo from "../assets/imagens/logo.svg";
 import iconUser from "../assets/imagens/imgUser.svg";
@@ -118,3 +119,4 @@ export const Register = () => {
     </div>
   );
 };
+

@@ -23,6 +23,7 @@ export const PublicInput: React.FC<InputProps> = ({
 }) => {
   const [focus, setFocus] = useState(false);
 
+
   return (
     <div className={"input " + (focus ? "focus" : "")}>
       <img src={icon} alt={alt} />
@@ -35,6 +36,6 @@ export const PublicInput: React.FC<InputProps> = ({
         onFocus={() => setFocus(true)}
         onBlur={() => setFocus(false)}
       />
-    </div>
-  );
+    </div> 
+;
 };
