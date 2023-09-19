@@ -14,7 +14,7 @@ export const PublicInput: React.FC<InputProps> = ({icon, alt, type, name, placeh
     const [focus, setFocus] = useState(false);
 
     return (
-        <div className={"input " + (focus ? 'focus' : '')}>
+        <div className={"input" + (focus ? 'focus' : '')}>
             <img src={icon} alt={alt} />
             <input type={type} name={name} placeholder={placeholder}
             value={modelValue}

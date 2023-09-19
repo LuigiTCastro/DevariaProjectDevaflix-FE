@@ -18,7 +18,7 @@
 
 * {
     font-family: $FontRegular;
-    font-size: 14px;
+    font-size: 18px;
 }
 
 html,
@@ -42,7 +42,7 @@ body {
 input {
     font-size: 16px;
     letter-spacing: 0.01em;
-    color: $GreyColor1;
+    color: $GreyColor1;//
     border-radius: 0;
     border: none;
     outline: none;
@@ -78,12 +78,12 @@ button {
     
    
     @media screen and (min-width: $DesktopBreakpoint) {
-        background-color: $PrimaryColorWithOpacity;
-        color: $PrimaryColor;
+        background-color: $PrimaryColor;
+        color: $WhiteColor;
 
         &:hover{
-            background-color: $PrimaryColor;
-            color: $PrimaryColor5;
+            background-color: $PrimaryColorWithOpacity;
+            color: $PrimaryColor;
         }
 
         &.disabled{
@@ -129,7 +129,7 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid $PrimaryColor;
+    border: 2px solid $PrimaryColor;//
 
     img {
         border-radius: 50%;
@@ -151,9 +151,9 @@ button {
 
 body {
     @media screen and (min-width: $DesktopBreakpoint) {
-        //background-color: $PrimaryColorWithOpacity;
-       // background-image: url('../images/background.svg');
-       // background-size: cover;
+      background-color: $PrimaryColorWithOpacity;
+      background-image: url('../../assets/imagens/fundodevaflix.svg');
+      background-size: cover;
     }
 }
 
@@ -182,4 +182,5 @@ body {
 
 @import './public.scss';
 @import './InputAvatar.scss';
+@import './register.scss';
 
