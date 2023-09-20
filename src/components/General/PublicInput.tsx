@@ -37,5 +37,5 @@ export const PublicInput: React.FC<InputProps> = ({
         onBlur={() => setFocus(false)}
       />
     </div> 
-;
+  )
 };

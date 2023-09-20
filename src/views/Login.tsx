@@ -47,6 +47,7 @@ export const Login = () => {
 
   return (
     <div className="ContainerPublic">
+      <div className="ContainerInicial register $DesktopBreakpoint">
       <img src={logo} alt="Logo Devaflix" className="logo" />
       <form>
         {error && <p className="error">{error}</p>}
@@ -91,6 +92,7 @@ export const Login = () => {
           <Link to="/register"> Faça seu cadastro agora!</Link>
         </div>
       </form>
+      </div>
     </div>
   );
 };
