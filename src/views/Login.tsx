@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import logo from "../assets/imagens/logo.svg";
 import iconEmail from "../assets/imagens/imgEmail.svg";
 import iconChave from "../assets/imagens/imgChave.svg";
@@ -6,7 +7,9 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { validarEmail, validarSenha } from "../utils/validators"
 import { useSearchParams } from "react-router-dom";
+import { LoginServices } from "../Services/LoginServices";
 
+const loginServices = new LoginServices();
 
 export const Login = () => {
   const [login, setLogin] = useState("");
@@ -33,14 +36,15 @@ export const Login = () => {
       }
 
       setLoading(true);
-      // TODO - banco de dados
+      await loginServices.login({ login, password });
 
       setLoading(false);
-    } catch (e) {
+    } catch (e: any) {
       console.log("Erro ao efetuar login:", e);
       setLoading(false);
-      // TODO
-
+      if (e?.response?.data?.message) {
+        return setError(e?.response?.data?.message);
+      }
       return setError("Erro ao efetuar login, tente novamente");
     }
   };
