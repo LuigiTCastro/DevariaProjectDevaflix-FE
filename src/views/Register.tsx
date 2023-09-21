@@ -8,7 +8,7 @@ import { PublicInput } from "../components/General/PublicInput";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { AvatarInput } from "../components/General/AvatarInput";
-import { UploadImg } from "../components/General/UploadImg";
+import { UpLoadImagem } from "../components/General/UpLoadImagem";
 import {
   validarNome,
   validarEmail,
@@ -55,68 +55,68 @@ export const Register = () => {
 
   return (
     <div className="ContainerPublic register">
-      <img src={logo} alt="Logo Devaflix" className="logo" />
+      <div className="ContainerInicial register $DesktopBreakpoint">
+        
+        <img src={logo} alt="Logo Devaflix" className="logo" />
 
-      <form>
-        <AvatarInput />
-        <UploadImg />
+        <form className="formInicial">
+        
+          <UpLoadImagem />
 
-        {error && <p className="error">{error}</p>}
-        {/*<p className='error'> Favor preencher os campos</p>*/}
-        <PublicInput
-          icon={iconUser}
-          name="Usuario"
-          alt="Usuario"
-          placeholder="Usuario"
-          type="text"
-          modelValue={usuario}
-          setValue={setUsuario}
-        />
-        <PublicInput
-          icon={iconEmail}
-          alt="Login"
-          name="Login"
-          placeholder="Login"
-          type="text"
-          modelValue={login}
-          setValue={setLogin}
-        />
+          {error && <p className="error">{error}</p>}
+         
+          <PublicInput
+            icon={iconUser}
+            name="Usuario"
+            alt="Usuario"
+            placeholder="Usuario"
+            type="text"
+            modelValue={usuario}
+            setValue={setUsuario}
+          />
+          <PublicInput
+            icon={iconEmail}
+            alt="Login"
+            name="Login"
+            placeholder="Login"
+            type="text"
+            modelValue={login}
+            setValue={setLogin}
+          />
 
-        <PublicInput
-          icon={iconChave}
-          alt="Senha"
-          name="Senha"
-          placeholder="Senha"
-          type="password"
-          modelValue={password}
-          setValue={setPassword}
-        />
+          <PublicInput
+            icon={iconChave}
+            alt="Senha"
+            name="Senha"
+            placeholder="Senha"
+            type="password"
+            modelValue={password}
+            setValue={setPassword}
+          />
 
-        <PublicInput
-          icon={iconChave}
-          alt="Confirme a Senha"
-          name="Confirme a Senha"
-          placeholder="Confirmar Senha"
-          type="password"
-          modelValue={confirm}
-          setValue={setConfirm}
-        />
+          <PublicInput
+            icon={iconChave}
+            alt="Confirme a Senha"
+            name="Confirme a Senha"
+            placeholder="Confirmar Senha"
+            type="password"
+            modelValue={confirm}
+            setValue={setConfirm}
+          />
 
-        <button
-          type="button"
-          className="$DesktopBreakpoint"
-          onClick={handleCadastro}
-        >
-          {" "}
-          Cadastrar{" "}
-        </button>
+          <button
+            type="button"
+            className="$DesktopBreakpoint"
+            onClick={handleCadastro}>          
+            Cadastrar
+          </button>
 
-        <div className="link">
-          <p> Já possui uma conta!</p>
-          <Link to="/login"> Faça seu login agora!</Link>
-        </div>
-      </form>
+          <div className="link">
+            <p> Já possui uma conta!</p>
+            <Link to="/login"> Faça seu login agora!</Link>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };
-

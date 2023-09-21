@@ -1,23 +1,22 @@
 /**
  * Valida um nome.
  */
-const validarNome = (name: string | undefined): boolean => {
-  return name !== undefined && name.length > 3;
+const validarNome = (nome: string | undefined): boolean => {
+  return nome !== undefined && nome.length > 2;
 };
 
 /**
  * Valida um endereço de e-mail.
  */
 const validarEmail = (email: string): boolean => {
-  const emailPattern: RegExp =
-    /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+  const emailPattern: RegExp = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
   return emailPattern.test(email);
 };
 
 /**
  * Valida uma senha.
  */
-const validarSenha = (senha: string | undefined): boolean => {
+const validarSenha = (senha: string): boolean => {
   if (!senha) return false;
 
   // Pelo menos 8 caracteres
@@ -41,10 +40,7 @@ const validarSenha = (senha: string | undefined): boolean => {
 /**
  * Valida a confirmação de senha.
  */
-const validarConfirmacaoSenha = (
-  senha: string | undefined,
-  confirmacao: string | undefined
-): boolean => {
+const validarConfirmacaoSenha = (senha: string, confirmacao: string): boolean => {
   return validarSenha(senha) && senha === confirmacao;
 };
 
