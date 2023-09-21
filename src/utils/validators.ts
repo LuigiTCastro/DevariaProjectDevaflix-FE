@@ -2,7 +2,7 @@
  * Valida um nome.
  */
 const validarNome = (nome: string | undefined): boolean => {
-  return nome !== undefined && nome.length > 2;
+  return nome !== undefined && nome.length > 3;
 };
 
 /**

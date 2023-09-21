@@ -23,6 +23,7 @@ export class LoginServices extends HttpApiServices {
                 }
             }
            
+           
         }
     }
     //deslogar, limpar o localstorage

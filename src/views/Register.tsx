@@ -1,4 +1,4 @@
-
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import logo from "../assets/imagens/logo.svg";
 import iconUser from "../assets/imagens/imgUser.svg";
@@ -6,8 +6,7 @@ import iconEmail from "../assets/imagens/imgEmail.svg";
 import iconChave from "../assets/imagens/imgChave.svg";
 import { PublicInput } from "../components/General/PublicInput";
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { AvatarInput } from "../components/General/AvatarInput";
+import { Link, useNavigate } from "react-router-dom";
 import { UpLoadImagem } from "../components/General/UpLoadImagem";
 import {
   validarNome,
@@ -15,73 +14,94 @@ import {
   validarSenha,
   validarConfirmacaoSenha,
 } from "../utils/validators";
+import { RegisterServices } from "../Services/RegisterServices";
 
-
+const registerServices = new RegisterServices();
 
 export const Register = () => {
-  const [login, setLogin] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [usuario, setUsuario] = useState("");
+  const [name, setName] = useState("");
   const [confirm, setConfirm] = useState("");
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [image, setImage] = useState("");
 
-  const handleCadastro = () => {
-    setError(""); // Limpar os erros anteriores
+  const navigate = useNavigate();
 
-    // Realizar a validação dos campos
-    if (!validarNome(usuario)) {
-      setError("Nome deve ter pelo menos 3 caracteres.");
-      return;
+  const handleCadastro = async() => {
+    try {
+      setError(""); // Limpar os erros anteriores
+
+      // Realizar a validação dos campos
+      if (!validarNome(name.trim())) {
+        setError("Nome deve ter pelo menos 3 caracteres.");
+        return;
+      }
+
+      if (!validarEmail(email.trim())) {
+        setError("Endereço de e-mail inválido.");
+        return;
+      }
+
+      if (!validarSenha(password.trim())) {
+        setError("Senha invalida!");
+        return;
+      }
+
+      if (!validarConfirmacaoSenha(password.trim(), confirm.trim())) {
+        setError("As senhas não coincidem.");
+        return;
+      }
+      setLoading(true);
+
+      const body = {
+        name,
+        email,
+        password,
+        avatar: image,
+      };
+
+      await registerServices.register(body);
+      setLoading(false);
+      return navigate("/?success=true");
+    } catch (e: any) {
+      console.log("Erro ao efetuar cadastro:", e);
+      setLoading(false);
+      if (e?.response?.data?.message) {
+        return setError(e?.response?.data?.message);
+      }
+      return setError("Erro ao efetuar cadastro, tente novamente");
     }
-
-    if (!validarEmail(login)) {
-      setError("Endereço de e-mail inválido.");
-      return;
-    }
-
-    if (!validarSenha(password)) {
-      setError("Senha invalida!");
-      return;
-    }
-
-    if (!validarConfirmacaoSenha(password, confirm)) {
-      setError("As senhas não coincidem.");
-      return;
-    }
-
-    //TODO
-    // Implemente a lógica para enviar os dados para o servidor ou fazer o que for necessário aqui.
   };
 
   return (
     <div className="ContainerPublic register">
       <div className="ContainerInicial register $DesktopBreakpoint">
-        
         <img src={logo} alt="Logo Devaflix" className="logo" />
 
         <form className="formInicial">
-        
           <UpLoadImagem />
 
           {error && <p className="error">{error}</p>}
-         
+
           <PublicInput
             icon={iconUser}
-            name="Usuario"
-            alt="Usuario"
-            placeholder="Usuario"
+            name="Name"
+            alt="Name"
+            placeholder="Nome"
             type="text"
-            modelValue={usuario}
-            setValue={setUsuario}
+            modelValue={name}
+            setValue={setName}
           />
           <PublicInput
             icon={iconEmail}
-            alt="Login"
-            name="Login"
-            placeholder="Login"
+            alt="Email"
+            name="Email"
+            placeholder="Email"
             type="text"
-            modelValue={login}
-            setValue={setLogin}
+            modelValue={email}
+            setValue={setEmail}
           />
 
           <PublicInput
@@ -107,8 +127,10 @@ export const Register = () => {
           <button
             type="button"
             className="$DesktopBreakpoint"
-            onClick={handleCadastro}>          
-            Cadastrar
+            onClick={handleCadastro}
+            disabled={loading}
+          >
+            {loading ? "...Carregando" : "Cadastrar"}
           </button>
 
           <div className="link">
