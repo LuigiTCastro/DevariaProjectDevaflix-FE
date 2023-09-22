@@ -3,7 +3,7 @@ import { HttpApiServices } from "./HttpApiServices";
 
 
 export class LoginServices extends HttpApiServices {
-    async login(body: any) {
+    async login(body: any, setToken: any) {
         //chamar na API
         const { data } = await this.post('/auth/login', body);
         //com a API de login dando certo  ,setamos no localstorage o email que voltou do data
@@ -22,13 +22,13 @@ export class LoginServices extends HttpApiServices {
                     localStorage.setItem('avatar', user.avatar);
                 }
             }
-           
+            setToken(data.token);
            
         }
     }
     //deslogar, limpar o localstorage
-    logout() {
+    logout(setToken: any) {
         localStorage.clear();
-        
+        setToken('');
     }
 }
