@@ -1,0 +1,78 @@
+
+@import './configs.scss';
+
+.SearchContainer,
+.IconeHome,
+.AvatarMini,
+.BtnEntrar{
+    display: none;
+}
+.button.BtnDropdown{
+  margin-top: 20px;
+}
+
+@media screen and (min-width: $DesktopBreakpoint) {  
+  .ContainerNavigation{
+      display: flex;
+      align-items: center;
+      justify-content: center;         
+      background: $WhiteColor;
+      gap: 10px;
+
+      .imgAvatar{
+        align-items: center;
+        width: 45px;
+        height:45px;
+        margin-top: 10px;     
+        }
+  }    
+    
+  .BtnDropdown{
+      display: none;
+  }
+  .SearchContainer,
+   .IconeHome,
+   .AvatarMini,
+   .BtnEntrar{
+       display: flex;
+   }
+
+   .btnHeaderEntrar{
+    display: flex;
+    text-align: center;
+    width: 135px ;
+    height: 45px ;
+    justify-content: center;
+    border-radius: 4px;
+    margin: 0;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 40px;
+   }
+
+  
+    
+
+  .SearchContainer {
+    position: relative;  
+    background-color: $PrimaryColor7;
+    border-radius: 8px;
+    display: flex;
+    flex: 2;
+    width: 372px;
+    height: 46px;
+    margin-right: 20px;
+
+    .imgLupa {
+      width: 30px;
+      height: 30px;
+      padding: 8px;
+    }  
+      
+  }
+  
+  }
+  
+
+
+

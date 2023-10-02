@@ -1,0 +1,54 @@
+@import './configs.scss';
+
+.DropdownMenu {
+  //background-color: rgba(137, 126, 215, 0.52);
+  background-color: rgba(137, 126, 215, 1);
+  width: 368px;
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: -250px;
+  color: $WhiteColor;
+  list-style: none;
+  margin: 0; 
+  text-align:start;
+}
+
+.Dropdown-li {
+  margin-left: 35px;
+  padding-bottom: 15px;
+  font-size: 20px;
+}
+
+.DropdownSpan {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 35px;
+  padding: 10px;
+}
+
+.Dropdown-li:nth-child(2) {
+  margin-top: 15px;
+}
+
+.Dropdown-li:nth-child(5) {
+  border-bottom: none;
+}
+
+.open .DropdownMenu {
+  display: block;
+}
+
+.NavbarDropdown {
+  position: relative;
+  display: inline-block;
+  background-color: $WhiteColor;
+  color: $PrimaryColor;
+}
+
+button.BtnDropdown {
+  margin-top: 15px;
+  color: $PrimaryColor;
+  background-color: transparent;
+  cursor: pointer;
+}
