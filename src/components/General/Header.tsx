@@ -1,7 +1,12 @@
+
+import Logo from '../../assets/imagens/logo.svg';
+import { Navigation } from './navigation';
+
 export const Header = () =>{
     return (
-      <div>
-        <h1>HEADER</h1>
+      <div className="ContainerHeader">        
+        <img className='ImgLogo'src={Logo} alt="Logo Devaflix" />               
+            <Navigation/>  
       </div>
     );
 } 
