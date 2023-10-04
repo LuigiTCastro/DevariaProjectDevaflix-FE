@@ -26,7 +26,7 @@ export const Navigation = () =>{
            <Dropdown />        
            <Search />          
            <div className="IconeHome">
-               <img src={iconHome} alt="Icone Home" />
+          <img src={iconHome} alt="Icone Home" onClick={() => (window.location.href = "/home")} />
            </div>      
             <div className="AvatarMini">           
               <img className='imgAvatar'src={imgAvatar} alt="Avatar" />    
