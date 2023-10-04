@@ -3,6 +3,7 @@ import { Login } from "../views/Login";
 import { Register } from "../views/Register";
 import { Home } from "../views/Home";
 import { MyPage } from "../views/MyPage";
+import { Movie } from "../views/Movie";
 
 
 export const getRouter = (token: string) => {
@@ -10,21 +11,25 @@ export const getRouter = (token: string) => {
    if (!token) {
       //telas publicas
       return createBrowserRouter([
-         {
-            path: '*',
-            id: 'home',
-            element: <Home />
-         },
-         {
-            path: '/login',
-            id: 'login',
-            element: <Login />
-         },
-         {
-            path: '/register',
-            id: 'register',
-            element: <Register />
-         }
+        {
+          path: "*",
+          id: "home",
+          element: <Home />,
+        },
+        {
+         path: "/movie/:id",
+         element: <Movie />,
+        },
+        {
+          path: "/login",
+          id: "login",
+          element: <Login />,
+        },
+        {
+          path: "/register",
+          id: "register",
+          element: <Register />,
+        },
       ]);
    } else {
 //telas privadas
