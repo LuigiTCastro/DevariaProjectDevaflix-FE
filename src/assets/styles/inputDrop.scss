@@ -1,0 +1,36 @@
+@import './configs.scss';
+
+.ContainerInputDrop{
+   display: flex;
+   justify-items: flex-end;
+   justify-content:left;
+   width: 50%;
+   margin-top: 10px;
+   margin-left:20px;
+   border: 0.5px solid  $PrimaryColor;
+   border-radius: 5%;
+
+
+  .imgLupa{
+    padding: 2%;
+    width: 9%;
+  }
+
+  @media screen and (min-width: $DesktopBreakpoint) { 
+        width: 70%;
+        margin-top: 10px;
+        margin-left: 15px;  
+   
+    .ContainerInputDrop.imgLupa{
+       padding: 5%;
+       width: 20%;
+     }
+
+    
+  
+  
+  }
+
+
+}
+

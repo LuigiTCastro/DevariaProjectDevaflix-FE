@@ -11,6 +11,24 @@
   margin-top: 20px;
 }
 
+
+  
+.inputDrop{
+  border-radius: 4%;
+  background-color: transparent;
+  margin-left: 5px;
+  padding: 5px;
+  font-size: 18px;
+
+  
+  &::placeholder {
+    color: $WhiteColor;
+    opacity: 1;
+
+}
+}
+
+
 @media screen and (min-width: $DesktopBreakpoint) {  
   .ContainerNavigation{
       display: flex;
@@ -27,9 +45,7 @@
         }
   }    
     
-  .BtnDropdown{
-      display: none;
-  }
+  
   .SearchContainer,
    .IconeHome,
    .AvatarMini,
