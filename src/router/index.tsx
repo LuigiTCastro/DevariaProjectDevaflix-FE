@@ -31,10 +31,15 @@ export const getRouter = (token: string) => {
       return createBrowserRouter([
          {
             path: '*',
+            id: 'home',
+            element: <Home />
+         },
+         {
+            path: '/me',
             id: 'myPage',
             element: <MyPage />
          }
-        
+
             
       ]);
    }
