@@ -43,8 +43,7 @@ export const getRouter = (token: string) => {
             path: '/me',
             id: 'myPage',
             element: <MyPage />
-         }
-
+         }     
             
       ]);
    }

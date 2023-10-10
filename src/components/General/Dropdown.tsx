@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { BsFillCaretDownFill } from "react-icons/bs";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { InputDrop } from './InputDrop';
