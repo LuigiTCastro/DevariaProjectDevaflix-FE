@@ -7,8 +7,8 @@ import { SearchServices } from "../../Services/SearchServices";
 
 const searchServices = new SearchServices();
 
-const moviesURL: string = import.meta.env.VITE_API;
-const apiKey: string = import.meta.env.VITE_API_KEY;
+//const moviesURL: string = import.meta.env.VITE_API;
+//const apiKey: string = import.meta.env.VITE_API_KEY;
 //const imagesURL = import.meta.env.VITE_IMG;
 
 export const TelaPrincipal = () => {
@@ -52,11 +52,11 @@ export const TelaPrincipal = () => {
       <h2 className="title">Melhores filmes:</h2>
       <div className="movies-container">
         {topMovies?.length > 0 &&
-          topMovies.map((movie) => <MovieCard 
-          key={movie.imdbID} 
+          topMovies.map((movie) => <MovieCard
+            key={movie.imdbID}
           
-          movie={movie} />)}
+            movie={movie} />)}
       </div>
-    </div>
-  );
+    </div>
+  );
 };
