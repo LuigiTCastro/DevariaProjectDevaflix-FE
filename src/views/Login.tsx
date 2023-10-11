@@ -39,6 +39,9 @@ export const Login = () => {
       setLoading(true);
       await loginServices.login({ login, password }, setToken);
 
+      // Redirecionar para "MyPage" após o login bem-sucedido
+      window.location.href = "/me";
+
       setLoading(false);
     } catch (e: any) {
       console.log("Erro ao efetuar login:", e);
