@@ -1,3 +1,5 @@
+
+
 import imgAvatar from "../../assets/imagens/imgAvatar.svg";
 import iconHome from "../../assets/imagens/imgHome.svg";
 import iconSair from "../../assets/imagens/imgsair.svg";
@@ -49,6 +51,9 @@ export const Navigation = () => {
               <img src={iconSair} onClick={handleLogoutClick} />
             </div>
 
+
+
+
           </>
         ) : (
           <button
@@ -64,5 +69,6 @@ export const Navigation = () => {
     </div>
   );
 };
+
 ﻿
 
