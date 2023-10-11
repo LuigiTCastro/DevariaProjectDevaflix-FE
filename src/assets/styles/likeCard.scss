@@ -1,0 +1,14 @@
+.icons-container {
+  display: flex;
+  align-items: center;
+
+  .star-icon {
+    margin-right: 0.5rem;
+  }
+
+  .like-button {
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+}
