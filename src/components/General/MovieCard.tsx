@@ -31,5 +31,6 @@ export const MovieCard: React.FC<MovieCardProps> = ({
       </p>
       {showLink && <Link to={`/movie/${movie.imdbID}`}>Ver mais</Link>}
   </div>
+  
 );
 };
