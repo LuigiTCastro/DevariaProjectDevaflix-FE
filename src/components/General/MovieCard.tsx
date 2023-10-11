@@ -37,6 +37,15 @@ export const MovieCard: React.FC<MovieCardProps> = ({
     <div className="movie-card">
       <img src={movie.poster} alt={movie.title} />
       <h2>{movie.translatedTitle}</h2>
+ Fix-LogicaBtnEntrar
+      <p>
+        <FaStar /> {movie.imdbRating}
+      </p>
+      {showLink && <Link to={`/movie/${movie.imdbID}`}>Ver mais</Link>}
+  </div>
+  
+);
+
       <div className="icons-container">
         <FaStar className="star-icon" /> {movie.imdbRating}
         <button className="like-button" onClick={handleLikeToggle}>
@@ -47,4 +56,5 @@ export const MovieCard: React.FC<MovieCardProps> = ({
       {showLink && <Link to={`/movie/${movie.imdbID}`}>Detalhes</Link>}
     </div>
   );
+
 };

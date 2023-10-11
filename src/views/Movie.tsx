@@ -21,7 +21,7 @@ export const Movie: React.FC = () => {
   const [movie, setMovie] = useState<MovieProps | null>(null);
 
   useEffect(() => {
-    const getMovie = async (imdbID: string) => {
+    const getMovie = async (imdbID: string | undefined)=> {
       const query = `imdbID=${imdbID}`;
       const details = await searchServices.details(query);
       setMovie(details.data);
@@ -36,7 +36,8 @@ export const Movie: React.FC = () => {
         {movie && (
           <>
             <h1>{movie.title}</h1>
-            <img src={movie.poster} alt={movie.title} />
+            <img src={movie?.poster || ''} alt={movie?.title} />
+          
             {/* Add more details as needed */}
           </>
         )}
