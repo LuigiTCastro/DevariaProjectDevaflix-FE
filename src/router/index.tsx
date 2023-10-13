@@ -42,6 +42,10 @@ export const getRouter = (token: string | null) => {
         id: "myPage",
         element: <MyPage />,
       },
+      {
+        path: "/movie/:id",
+        element: <Movie />,
+      },
     ]);
   }
 };

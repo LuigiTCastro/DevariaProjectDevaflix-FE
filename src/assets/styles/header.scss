@@ -1,15 +1,17 @@
 @import './configs.scss';
 
 .ContainerHeader{
+    position: fixed;
+    top: 0;
+    left: 0;
     display: flex;
     width: 100%;   
     background-color: $WhiteColor;
     align-items:center;
-    justify-content: center;  
-   
+    justify-content: center;     
     border-bottom: 0.5px solid $GreyColor2;
     gap:100px; 
- 
+   
     .ImgLogo{
      width: 35%;
    

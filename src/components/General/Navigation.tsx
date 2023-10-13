@@ -4,6 +4,9 @@ import iconHome from "../../assets/imagens/imgHome.svg";
 import iconSair from "../../assets/imagens/imgsair.svg";
 import Dropdown from "./Dropdown";
 import Search from "./Search";
+import { SearchServices } from "../../Services/SearchServices";
+
+const searchServices = new SearchServices();
 
 export const Navigation = () => {
   const id = localStorage.getItem("id") || "";
@@ -46,9 +49,7 @@ export const Navigation = () => {
               onClick={() => (window.location.href = "/me")}
               alt="Avatar"
             />
-            <div className="IconeSair">
-              <img src={iconSair} onClick={handleLogoutClick} />
-            </div>
+           
           </>
         ) : (
           <button
@@ -61,6 +62,9 @@ export const Navigation = () => {
         )}
       </div>
       <Dropdown />
+      <div className="IconeSair">
+              <img src={iconSair} onClick={handleLogoutClick} />
+            </div>
     </div>
   );
 };
