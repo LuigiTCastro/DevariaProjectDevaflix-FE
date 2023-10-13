@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaStar, FaThumbsUp } from "react-icons/fa";
+import { FaStar, FaThumbsUp, FaThumbsDown } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "../../assets/styles/likeCard.scss";
 
@@ -19,14 +19,18 @@ interface MovieCardProps {
   showLink?: boolean;
 }
 
-export const MovieCard: React.FC<MovieCardProps> = ({
-  movie,
-  showLink = true,
-}) => {
+export const MovieCard: React.FC<MovieCardProps> = ({ movie, showLink = true }) => {
   const [isLiked, setIsLiked] = useState(false);
+  const [isDisliked, setIsDisliked] = useState(false);
 
   const handleLikeToggle = () => {
     setIsLiked(!isLiked);
+    setIsDisliked(false);
+  };
+
+  const handleDislikeToggle = () => {
+    setIsDisliked(!isDisliked);
+    setIsLiked(false);
   };
 
   const isOnMyPage = () => {
@@ -34,19 +38,23 @@ export const MovieCard: React.FC<MovieCardProps> = ({
   };
 
   return (
-    <> 
-      <div className="movie-card">
+    <div className="movie-card">
       <img src={movie.poster} alt={movie.title} />
       <h2>{movie.translatedTitle}</h2>
       <div className="icons-container">
-        <FaStar className="star-icon " /> {movie.imdbRating}
-        <button className="like-button" onClick={handleLikeToggle}>
-          {isOnMyPage() &&
-            (isLiked ? <FaThumbsUp color="blue" /> : <FaThumbsUp />)}
-        </button>
+        <FaStar className="star-icon" /> {movie.imdbRating}
+        {isOnMyPage() && (
+          <div>
+            <button className="like-button" onClick={handleLikeToggle}>
+              {isLiked ? <FaThumbsUp color="blue" /> : <FaThumbsUp />}
+            </button>
+            <button className="dislike-button" onClick={handleDislikeToggle}>
+              {isDisliked ? <FaThumbsDown color="red" /> : <FaThumbsDown />}
+            </button>
+          </div>
+        )}
       </div>
       {showLink && <Link to={`/movie/${movie.imdbID}`}>Detalhes</Link>}
     </div>
-    </>
   );
 };
