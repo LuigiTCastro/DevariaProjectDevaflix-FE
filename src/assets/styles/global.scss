@@ -156,6 +156,8 @@ body {
       background-color: $PrimaryColorWithOpacity;
       background-image: url('../../assets/imagens/fundodevaflix.svg');
       background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
     }
 }
 
@@ -191,5 +193,6 @@ body {
 @import './telaprincipal.scss';
 @import './footer.scss';
 @import './inputDrop.scss';
+
 
 

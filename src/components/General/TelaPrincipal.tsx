@@ -1,4 +1,3 @@
-
 import  { useState, useEffect } from "react";
 import "../../assets/styles/telaprincipal.scss";
 import "../../assets/styles/movieGrid.scss";
@@ -7,9 +6,6 @@ import { SearchServices } from "../../Services/SearchServices";
 
 const searchServices = new SearchServices();
 
-//const moviesURL: string = import.meta.env.VITE_API;
-//const apiKey: string = import.meta.env.VITE_API_KEY;
-//const imagesURL = import.meta.env.VITE_IMG;
 
 export const TelaPrincipal = () => {
   const [topMovies, setTopMovies] = useState<any[]>([]);
@@ -22,21 +18,21 @@ export const TelaPrincipal = () => {
   };
 
   const getTopRatedMovies = async () => {
-   // const topRatedMovies = await getMoviesByCategory("top_rated");
-    //setTopMovies(topRatedMovies);
+   const topRatedMovies = await getMoviesByCategory("top_rated","");
+    setTopMovies(topRatedMovies);
   };
 
     const getMoviesForCategories = async () => {
-    const comedyMovies = await getMoviesByCategory("genre","action");
-    //const actionMovies = await getMoviesByCategory("action");
-   // const dramaMovies = await getMoviesByCategory("drama");
-   // const romanceMovies = await getMoviesByCategory("romance");
+    const comedyMovies = await getMoviesByCategory("genre","comedy");
+    const actionMovies = await getMoviesByCategory("genre","action");
+    const dramaMovies = await getMoviesByCategory("genre","drama");
+    const romanceMovies = await getMoviesByCategory("genre","romance");
 
     const allMovies = [
       ...comedyMovies,
-     // ...actionMovies,
-     // ...dramaMovies,
-     // ...romanceMovies,
+      ...actionMovies,
+      ...dramaMovies,
+      ...romanceMovies,
     ];
 
     setTopMovies(allMovies);
@@ -47,16 +43,71 @@ export const TelaPrincipal = () => {
     getMoviesForCategories();
   }, []);
 
+  
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1
+  };
+
   return (
     <div className="container">
       <h2 className="title">Melhores filmes:</h2>
-      <div className="movies-container">
-        {topMovies?.length > 0 &&
-          topMovies.map((movie) => <MovieCard
-            key={movie.imdbID}
-          
-            movie={movie} />)}
+      <p className="titleCategory">Comédia</p>
+      <div className="movies-container">      
+      
+        {
+          topMovies
+          .filter(movieGenre => movieGenre.genre.includes("Comedy"))
+          .slice(0,10)
+          .map((movie) => <MovieCard
+          key= {movie.imdbID}         
+          movie={movie} />)
+        }        
+     
+      </div>
+      <p className="titleCategory">Ação</p>
+      <div className="movies-container">      
+        
+        {
+          topMovies
+          .filter(movieGenre => movieGenre.genre.includes("Action"))
+          .slice(0,10)
+          .map((movie) => <MovieCard
+          key= {movie.imdbID}         
+          movie={movie} />)
+        }
+        
+      </div>
+      <p className="titleCategory">Drama</p>
+      <div className="movies-container">       
+        
+        {
+          topMovies
+          .filter(movieGenre => movieGenre.genre.includes("Drama"))
+          .slice(0,10)
+          .map((movie) => <MovieCard
+          key= {movie.imdbID}         
+          movie={movie} />)
+        }
+        
+      </div>
+      <p className="titleCategory">Romance</p>
+      <div className="movies-container">       
+        
+        {
+          topMovies
+          .filter(movieGenre => movieGenre.genre.includes("romance"))
+          .slice(0,10)
+          .map((movie) => <MovieCard
+          key= {movie.imdbID}         
+          movie={movie} />)
+        }
+        
       </div>
     </div>
+    
   );
 };

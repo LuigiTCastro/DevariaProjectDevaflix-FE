@@ -14,6 +14,7 @@ interface MovieCardProps {
     actor: string;
     plot: string;
     videos: string;
+    genre: string;
   };
   showLink?: boolean;
 }
@@ -33,11 +34,12 @@ export const MovieCard: React.FC<MovieCardProps> = ({
   };
 
   return (
-    <div className="movie-card">
+    <> 
+      <div className="movie-card">
       <img src={movie.poster} alt={movie.title} />
       <h2>{movie.translatedTitle}</h2>
       <div className="icons-container">
-        <FaStar className="star-icon" /> {movie.imdbRating}
+        <FaStar className="star-icon " /> {movie.imdbRating}
         <button className="like-button" onClick={handleLikeToggle}>
           {isOnMyPage() &&
             (isLiked ? <FaThumbsUp color="blue" /> : <FaThumbsUp />)}
@@ -45,5 +47,6 @@ export const MovieCard: React.FC<MovieCardProps> = ({
       </div>
       {showLink && <Link to={`/movie/${movie.imdbID}`}>Detalhes</Link>}
     </div>
+    </>
   );
 };

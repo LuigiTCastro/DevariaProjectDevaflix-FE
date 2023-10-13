@@ -1,13 +1,17 @@
 import { useState } from 'react';
 import { BsFillCaretDownFill } from "react-icons/bs";
 import { IoCloseCircleOutline } from "react-icons/io5";
-import { InputDrop } from './InputDrop';
+import  {InputDrop}  from './InputDrop';
+import { SearchServices } from '../../Services/SearchServices';
+
+const searchServices = new SearchServices();
 
 
 
 function Dropdown() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeInputIndex, setActiveInputIndex] = useState(null);
+ 
 
 
   const toggleDropdown = () => {
@@ -31,32 +35,32 @@ function Dropdown() {
         <hr className='linhaDivisoria' />
         <li className="Dropdown-li Ano">
         <span onClick={() => toggleInput(0)}> Ano </span>
-          {activeInputIndex === 0 && <InputDrop />}
+          {activeInputIndex === 0 && <InputDrop tipo="Ano" />}
         </li>
         <hr className='linhaDivisoria' />
         <li className="Dropdown-li Ator">
           <span onClick={() => toggleInput(1)}> Ator </span>
-          {activeInputIndex === 1 && <InputDrop />}
+          {activeInputIndex === 1 && <InputDrop tipo="Ator"/>}
         </li>
         <hr className='linhaDivisoria' />
         <li className="Dropdown-li Genero">
         <span onClick={() => toggleInput(2)}> Gênero </span>
-          {activeInputIndex === 2 && <InputDrop />}
+          {activeInputIndex === 2 && <InputDrop tipo="Gênero" />}
         </li>
         <hr className='linhaDivisoria' />
         <li className="Dropdown-li Tipo">
         <span onClick={() => toggleInput(3)}> Tipo </span>
-          {activeInputIndex === 3 && <InputDrop />}
+          {activeInputIndex === 3 && <InputDrop  tipo="Tipo" />}
         </li>
         <hr className='linhaDivisoria' />
         <li className="Dropdown-li Trailer">
         <span onClick={() => toggleInput(4)}> Trailer </span>
-          {activeInputIndex === 4 && <InputDrop />}
+          {activeInputIndex === 4 && <InputDrop tipo="Trailer" />}
         </li>
         <hr className='linhaDivisoria' />
         <li className="Dropdown-li Diretor">
         <span onClick={() => toggleInput(5)}> Diretor </span>
-          {activeInputIndex === 5 && <InputDrop />}
+          {activeInputIndex === 5 && <InputDrop tipo="Diretor" />}
         </li>
       </ul>
     </div>

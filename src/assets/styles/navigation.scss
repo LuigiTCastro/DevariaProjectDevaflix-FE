@@ -4,7 +4,8 @@
 .SearchContainer,
 .IconeHome,
 .AvatarMini,
-.BtnEntrar{
+.BtnEntrar,
+.IconeSair{
     display: none;
 }
 .button.BtnDropdown{
@@ -26,6 +27,8 @@
     opacity: 1;
 
 }
+
+
 }
 
 
@@ -42,6 +45,14 @@
         width: 45px;
         height:45px;
         margin-top: 10px;     
+        }
+
+        .IconeSair{
+          align-items: center;
+         width: 45px;
+         height:45px;
+         margin-top: 10px;     
+
         }
   }    
     
