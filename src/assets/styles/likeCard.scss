@@ -1,5 +1,6 @@
 
-@import './configs.scss';
+/*@import './configs.scss';
+
 .icons-container {
   display: flex; 
   align-items: center;
@@ -12,12 +13,11 @@
    
   }
 
-  .like-button button {
+  .like-button button, 
+  .dislike-button {
     border: none;
     background: none;
     cursor: pointer;
- 
-
   }
 
   @media screen and (min-width: $DesktopBreakpoint) {
@@ -34,15 +34,42 @@
   }
 
   
-  button.like-button  {
+  button
+  .like-button, 
+  .dislike-button {
     border: none;
     background: none;
-    cursor: pointer; 
+    cursor: pointer;
     margin-top: 0;
     margin-left: 5px;
-
   }
 
-
   
+}*/
+@import './configs.scss';
+
+.icons-container {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  width: 80px;
+  font-size: 10px;
+
+  .star-icon {
+    margin-right: 0.5rem;
+    width: 50px;
+    height:50px;
+  }
+
+  .like-button,
+  .dislike-button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    margin: 0 0.2rem;
+  }
+
+  @media screen and (min-width: $DesktopBreakpoint) {
+    font-size: 1rem;
+  }
 }
