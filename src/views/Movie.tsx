@@ -6,6 +6,11 @@ import { SearchServices } from "../Services/SearchServices";
 // Declaração da instância de SearchServices para realizar a busca
 const searchServices = new SearchServices();
 
+const handleLoginClick = () => {
+  window.location.href = id ? "/me" : "/login";
+};
+
+
 // Declaração da interface MovieProps para definir o formato dos dados do filme
 interface MovieProps {
   imdbID: string;
@@ -65,7 +70,15 @@ export const Movie: React.FC = () => {
             <p><strong>Avaliação IMDb:</strong> {movie.imdbRating}</p>
             <p><strong>Enredo:</strong> {movie.plot}</p>
             {/* Adicione mais detalhes conforme necessário */}
+            <button
+            className="btnHeaderSair"
+            type="button"
+            onClick={handleLoginClick}
+          >
+            Sair!
+          </button>
           </>
+          
         )}
       </div>
     </div>
