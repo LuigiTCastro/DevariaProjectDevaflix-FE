@@ -14,7 +14,11 @@
   text-align:start;
 }
   span{
-    margin-left: 10px;
+    margin-left: 20px;
+  }
+  .linhaDivisoria{
+    width: 85%;
+   
   }
 
 
@@ -85,7 +89,7 @@ button.BtnDropdown {
      padding-bottom: 3px;
     }
 
-    .Dropdown-li:nth-child(6) {
+    .Dropdown-li:nth-child(8) {
       border-bottom: 20px;
     }
 

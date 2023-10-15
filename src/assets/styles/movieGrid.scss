@@ -8,28 +8,24 @@
 
   .title {
     color: #fff;
-    font-size: 1rem;
+    font-size: 32px;
     text-align: center;
-    margin: 1rem 0 1rem;
+    margin: 0rem 0 1rem;
+    color: transparent;
 
     .query-text {
       color: #25CBD3;
     }
   }
 
-  .titleCategory{
+  p.titleCategory{
     color: #fff;
-    font-size: 1rem;
-    text-align: center;
-    margin: 0;
+    font-size: 20px;
+    text-align: left;    
+    margin: auto; 
+    padding: 2px;       
     
-
-  }
-  .icons-container,
-  a{
-     display: none;  
-
-  }
+    }
 
 }
 
@@ -48,7 +44,7 @@
   
 //tratar cada card individualmente
   div {
-    width: 15%;
+    width: 20%;
     color: #fff;
     margin-bottom: 0.5rem;
     display: flex;
@@ -60,7 +56,7 @@
   rgba(0, 0, 0, 0.17) 0px 12px 13px, 
   rgba(0, 0, 0, 0.09) 0px -3px 5px;
  background:rgba(0,0,0,0.55);
-    padding: 0.289rem;
+    padding: 1rem;
     border-radius: 8px;
 
     img {
@@ -70,6 +66,7 @@
     img,
     p {
       margin-bottom: 0rem;
+     
     }
 
     h2 {
@@ -96,44 +93,98 @@
       }
     }
   }
+.icons-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  font-size: 12px;
+  width: 100px;
+  padding: 5px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  margin-left: -20px;
+  gap: 0;
+}
+.star-icon {
+  margin-right: 0.5rem;
+  width: 18px; 
+  height: 18px; /* Ajuste o tamanho do ícone de estrela para a versão de desktop */
+  font-size: 15px;
+}
+
+button.like-button svg,
+button.dislike-button svg {
+  width: 10px;
+  height: 10px;
+}
+
+button.like-button,
+button.dislike-button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  margin: 0 0.2rem;
+}
+
 }
 
 @media screen and (min-width: $DesktopBreakpoint) {
+
+  .movies-container{
+    width: 12%;
+
+  }
   .container {
     width: 100%;
+    
   
-    .title {
+    h2.title {
       color: #fff;
       font-size: 2.5rem;
       text-align: center;
-      margin: 2rem 0 1rem;
+      margin: 10rem 0 1rem;
   
       .query-text {
         color: #25CBD3;
       }
     }
   
-    .titleCategory{
+     p.titleCategory{
       color: #fff;
-      font-size: 2.5rem;
+      font-size: 32px;
       text-align: left;
-      margin-left: 15%;
-      margin: 0;
-
-  
-    }
-    .icons-container{
-       display: flex;
-       width: 80%;
-       height: 20px;
-      flex-direction: row;
-      margin-bottom: 0.5rem;   
+      margin-left: 2%;     
+      padding: 8px;
+      }
+      .icons-container{
+        display: flex;
+        flex-direction: row;
+        font-size: 10px;
+        width: 100%;
+        padding: 2px;
+      }
+      .star-icon {
+        margin-right: 0.5rem;
+        width: 18px; 
+        height: 18px; /* Ajuste o tamanho do ícone de estrela para a versão de desktop */
+        font-size: 15px;
+      }
       
-     }   
+      button.like-button svg,
+      button.dislike-button svg {
+        width: 10px;
+        height: 10px;
+      }
       
-  
-  
-  
+      button.like-button,
+      button.dislike-button {
+        border: none;
+        background: none;
+        cursor: pointer;
+        margin: 0 0.2rem;
+      }   
+    
   }
   
   
@@ -143,7 +194,7 @@
     width: 1200px;
     //justify-content: space-between;
     padding: 1rem;
-    max-width: 1200px;
+    width: 95%;
     margin: 0 auto;
     gap: 10px;
   //tratar cada card individualmente

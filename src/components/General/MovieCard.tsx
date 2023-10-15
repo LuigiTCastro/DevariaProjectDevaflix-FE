@@ -44,14 +44,15 @@ export const MovieCard: React.FC<MovieCardProps> = ({ movie, showLink = true }) 
       <div className="icons-container">
         <FaStar className="star-icon" /> {movie.imdbRating}
         {isOnMyPage() && (
-          <div>
+          <>
             <button className="like-button" onClick={handleLikeToggle}>
               {isLiked ? <FaThumbsUp color="blue" /> : <FaThumbsUp />}
             </button>
             <button className="dislike-button" onClick={handleDislikeToggle}>
               {isDisliked ? <FaThumbsDown color="red" /> : <FaThumbsDown />}
             </button>
-          </div>
+          
+          </>
         )}
       </div>
       {showLink && <Link to={`/movie/${movie.imdbID}`}>Detalhes</Link>}
