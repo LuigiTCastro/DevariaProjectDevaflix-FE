@@ -23,7 +23,7 @@
   justify-content: center;
   color: #fff;
   flex-direction: column;  
-  margin: 3rem auto;
+  margin: 0.250rem auto;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
   rgba(0, 0, 0, 0.12) 0px -12px 30px, 
   rgba(0, 0, 0, 0.12) 0px 4px 6px, 
@@ -55,7 +55,7 @@
     img,
     h2,
     p {
-      margin-bottom: 1rem;
+      margin-bottom: 0.550rem;
       font-size: 1rem;
     }
 
@@ -67,7 +67,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 0.4rem;
+    
     }
   }
 }
