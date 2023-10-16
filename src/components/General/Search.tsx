@@ -4,31 +4,41 @@ import { SearchServices } from '../../Services/SearchServices';
 
 const searchService = new SearchServices();
 
-const Search = () => {
-  const [search, setSearch] = useState('');
+const Search = ({ updateResults:any }) => {
+    const [search, setSearch] = useState("");
 
-  const aoDigitar = (e:any) =>{
-    e.preventDefault();
-    console.log(e.target.value)
-    setSearch(e.target.value)
-  }
+    const aoDigitar = (e:any) => {
+      e.preventDefault();
+      console.log(e.target.value);
+      setSearch(e.target.value);
+    };
   
-  const sendSearch = (search:string) => {
-    const { data } = searchService.title(search)
-    console.log("data.data   =>> ",data.data)
-    return data.data;
-
-  }
+    const sendSearch = async (search:string) => {
+      try {
+        const response = await searchService.title(search);
+        updateResults(response.data); // Atualize os resultados no componente pai (TelaPrincipal)
+      } catch (error) {
+        console.error("Erro na pesquisa", error);
+      }
+    };
   
-  const onKey = (e:any) => {
-    if (e.key === 'Enter'){
-      sendSearch(search)
-
-    }
-    console.log(search)
-  }
+    const onKey = (e:any) => {
+      if (e.key === "Enter") {
+        sendSearch(search);
+      }
+    };
+  
 
   
+  // const sendSearch = (search: string) => {
+  //   return searchService.title(search);
+  // };
+
+  // const onKey = (e: any) => {
+  //   if (e.key === "Enter") {
+  //     sendSearch(search);
+  //   }
+  // };
 
   return (
   <div className="SearchContainer SearchFooter">

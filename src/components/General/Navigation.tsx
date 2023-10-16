@@ -8,24 +8,31 @@ import Search from './Search';
 
 
 
-export const Navigation = () =>{
-   //const [searchQuery, setSearchQuery] = useState('');
-  //  const [results, setResults] = useState('');
-  //  const [dropdownOpen, setDropdownOpen] = useState(false);
-   //const loggedIn = false; 
+export const Navigation = () => {
+  const id = localStorage.getItem("id") || "";
 
-   //const handleSearch = (query) => {
-  //  setSearchQuery(query);
-  //};
-  //const cliqueDropdown = () => {
-   // setDropdownOpen(!dropdownOpen);
-  //};
 
+  const handleHomeClick = () => {
+    const isOnMyPage = window.location.pathname === "/me";
+
+    if (!isOnMyPage) {
+      window.location.href = "/home";
+    }
+  };
+
+  const handleLoginClick = () => {
+    window.location.href = id ? "/me" : "/login";
+  };
+
+  const handleLogoutClick = () => {
+    localStorage.clear();
+    window.location.href = "/home";
+  };
 
     return (
       <div className="ContainerNavigation">             
            <Dropdown />        
-           <Search />          
+           <Search updateResults={""} />          
            <div className="IconeHome">
           <img src={iconHome} alt="Icone Home" onClick={() => (window.location.href = "/home")} />
            </div>      
