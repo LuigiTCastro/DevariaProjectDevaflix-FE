@@ -1,11 +1,15 @@
-
 import React from "react";
 import { useLocation } from "react-router-dom";
-import { MovieCard } from "./MovieCard";
+import { MovieCard } from "../components/General/MovieCard";
+
 
 const SearchResultsPage: React.FC = () => {
   const location = useLocation();
   const searchResults = location.state?.results || [];
+
+  const handleGoBack = () => {
+    window.history.back(); // Volta para a página anterior
+  };
 
   return (
     <div className="SearchResultsPage">
@@ -15,6 +19,7 @@ const SearchResultsPage: React.FC = () => {
           <MovieCard key={movie.imdbID} movie={movie} />
         ))}
       </div>
+      <button onClick={handleGoBack}>Voltar</button>
     </div>
   );
 };

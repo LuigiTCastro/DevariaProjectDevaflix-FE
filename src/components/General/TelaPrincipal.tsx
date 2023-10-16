@@ -1,9 +1,9 @@
+/* eslint-disable no-irregular-whitespace */
 import { useState, useEffect } from "react";
 import "../../assets/styles/telaprincipal.scss";
 import "../../assets/styles/movieGrid.scss";
 import { MovieCard } from "./MovieCard";
 import { SearchServices } from "../../Services/SearchServices";
-import SearchResult from "./searchResults";
 
 const searchServices = new SearchServices();
 
