@@ -68,6 +68,6 @@ export const TelaPrincipal = () => {
       <div className="movies-container">
         {renderMoviesByCategory("romance")}
       </div>
-    </div>
-  );
+  </div>
+);
 };
