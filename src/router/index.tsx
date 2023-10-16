@@ -4,6 +4,8 @@ import { Register } from "../views/Register";
 import { Home } from "../views/Home";
 import { MyPage } from "../views/MyPage";
 import { Movie } from "../views/Movie";
+import SearchResultsPage from "../views/SearchResultsPage";
+
 
 export const getRouter = (token: string | null) => {
   if (!token) {
@@ -28,6 +30,11 @@ export const getRouter = (token: string | null) => {
         id: "register",
         element: <Register />,
       },
+      {
+        path: "/search-results/:query", 
+        id: "SearchResultsPage",
+        element: <SearchResultsPage />,
+      },
     ]);
   } else {
     //telas privadas => Rotas para usuários autenticados
@@ -45,6 +52,11 @@ export const getRouter = (token: string | null) => {
       {
         path: "/movie/:id",
         element: <Movie />,
+      },
+      {
+        path: "/search-results/:query", 
+        id: "SearchResultsPage",
+        element: <SearchResultsPage />,
       },
     ]);
   }
