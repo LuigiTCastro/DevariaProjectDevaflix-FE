@@ -13,6 +13,7 @@
     margin-right: 0.5rem;
     width: 12px; /* Reduzido o tamanho do ícone de estrela */
     height: 12px; /* Reduzido o tamanho do ícone de estrela */
+    
   }
 
   button.like-button,
@@ -21,9 +22,10 @@
     background: none;
     cursor: pointer;
     margin: 0 0.2rem;
-    width: 6px; /* Reduzido o tamanho dos botões de curtir e descurtir */
-    height: 6px; /* Reduzido o tamanho dos botões de curtir e descurtir */
+    width: 6px; 
+    height: 6px; 
     font-size: 10px;
+    
   }
 
   @media screen and (min-width: $DesktopBreakpoint) {
@@ -31,7 +33,14 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 100px;
+      width: 100px;   
+
+    }
+
+    .star-icon {
+      margin-right: 0.5rem;
+      width: 18px; /* Reduzido o tamanho do ícone de estrela */
+      height: 18px; /* Reduzido o tamanho do ícone de estrela */
     }
 
 
