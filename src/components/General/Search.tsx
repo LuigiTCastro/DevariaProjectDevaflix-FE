@@ -55,7 +55,7 @@ import { useNavigate } from "react-router-dom"; // Importe useNavigate
 
 const Search = () => {
   const [search, setSearch] = useState("");
-  const searchService = new SearchServices();
+  const searchServices = new SearchServices();
   const navigate = useNavigate(); // Use useNavigate para navegação
 
   const aoDigitar = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -65,7 +65,7 @@ const Search = () => {
   const onKey = async (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       try {
-        const { data } = await searchService.title(search);
+        const { data } = await searchServices.search(search);
         navigate(`/search-results/${search}`, { state: { results: data } });
       } catch (error) {
         console.error("Erro ao buscar dados:", error);

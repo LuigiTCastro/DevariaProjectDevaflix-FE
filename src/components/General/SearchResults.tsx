@@ -11,7 +11,7 @@ const SearchResultsPage: React.FC = () => {
     <div className="SearchResultsPage">
       <h2>Resultados da Pesquisa:</h2>
       <div className="movies-container">
-        {searchResults.map((movie) => (
+        {searchResults.map((movie:any) => (
           <MovieCard key={movie.imdbID} movie={movie} />
         ))}
       </div>

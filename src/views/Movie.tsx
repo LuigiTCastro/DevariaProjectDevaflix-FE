@@ -6,6 +6,20 @@ import { SearchServices } from "../Services/SearchServices";
 // Declaração da instância de SearchServices para realizar a busca
 const searchServices = new SearchServices();
 
+interface MovieProps {
+    imdbID: string;
+    title: string;
+    translatedTitle: string;
+    poster: string;
+    imdbRating: number;
+    director: string;
+    actor: string;
+    plot: string;
+    videos: string;
+    genre: string;
+  
+}
+
 export const Movie: React.FC = () => {
   // Função para obter o ID do IMDb da rota
   const getImdbID = () => {

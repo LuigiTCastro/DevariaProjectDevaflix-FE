@@ -2,7 +2,7 @@
 import { HttpApiServices } from "./HttpApiServices";
 
 export class SearchServices extends HttpApiServices {
-    async title(title: string) {
+    async search(title: string) {
         return await this.get(`/search/title/?title=${title}`);
     }
 
@@ -20,5 +20,9 @@ export class SearchServices extends HttpApiServices {
 
     async dislike(id:string) {
         return await this.put(`/search/dislike/${id}`, {});
+    }
+    async rating(id:string){
+        const result = await this.get(`/search/rating/${id}`)
+        return result.data.percentageLikes
     }
 }

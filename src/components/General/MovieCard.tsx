@@ -2,9 +2,14 @@ import React, { useState } from "react";
 import { FaStar, FaThumbsUp, FaThumbsDown } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "../../assets/styles/likeCard.scss";
+import { SearchServices } from "../../Services/SearchServices";
+
+const searchServices = new SearchServices();
+
 
 interface MovieCardProps {
   movie: {
+    _id:string;
     imdbID: string;
     title: string;
     translatedTitle: string;
@@ -22,18 +27,36 @@ interface MovieCardProps {
 export const MovieCard: React.FC<MovieCardProps> = ({ movie, showLink = true }) => {
   const [isLiked, setIsLiked] = useState(false);
   const [isDisliked, setIsDisliked] = useState(false);
+  const ratingObj = searchServices.rating(movie._id)
 
-  const handleLikeToggle = () => {
-    setIsLiked(!isLiked);
-    setIsDisliked(false);
+
+  const handleLikeToggle = async () => {
+    try {
+      await searchServices.like(movie._id)
+      console.log(!isLiked)
+      setIsLiked(!isLiked);
+      setIsDisliked(false);
+      
+    } catch (error) {
+      alert(`Erro ao Descurtir o filme`)
+    }
   };
 
-  const handleDislikeToggle = () => {
-    setIsDisliked(!isDisliked);
-    setIsLiked(false);
+  const handleDislikeToggle = async() => {
+    try {
+      await searchServices.dislike(movie._id)
+      console.log(isDisliked)
+      setIsDisliked(!isDisliked);
+      setIsLiked(false);
+      
+      
+    } catch (error) {
+      alert(`Erro ao Descurtir o filme`)
+    }
   };
 
   const isOnMyPage = () => {
+    console.log(ratingObj)
     return window.location.pathname === "/me"; // Assumindo que '/me' é a rota da página "MyPage"
   };
 
@@ -51,6 +74,7 @@ export const MovieCard: React.FC<MovieCardProps> = ({ movie, showLink = true }) 
             <button className="dislike-button" onClick={handleDislikeToggle}>
               {isDisliked ? <FaThumbsDown color="red" /> : <FaThumbsDown />}
             </button>
+            <span>{ratingObj}%</span>
           
           </>
         )}
