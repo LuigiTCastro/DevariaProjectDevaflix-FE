@@ -1,4 +1,3 @@
-
 import imgAvatar from "../../assets/imagens/imgAvatar.svg";
 import iconSair from "../../assets/imagens/imgsair.svg";
 import Dropdown from "./Dropdown";
@@ -7,6 +6,16 @@ import Search from "./Search";
 
 export const Navigation = () => {
   const id = localStorage.getItem("id") || "";
+
+  const avatarImage = () => {
+    const avatar = localStorage.getItem("avatar");
+    if (avatar) {
+      const path = `../../assets/avatar/${avatar}_front.png`;
+      const imageUrl = new URL(path, import.meta.url);
+      return imageUrl.href;
+    }
+    return imgAvatar;
+  };
 
   const handleLoginClick = () => {
     window.location.href = id ? "/me" : "/login";
@@ -28,7 +37,7 @@ export const Navigation = () => {
           <>
             <img
               className="imgAvatar"
-              src={imgAvatar}
+              src={avatarImage()}
               onClick={() => (window.location.href = "/me")}
               alt="Avatar"
             />
