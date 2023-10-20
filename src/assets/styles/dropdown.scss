@@ -2,7 +2,7 @@
 
 .DropdownMenu {
   //background-color: rgba(137, 126, 215, 0.52);
-  background-color: rgba(137, 126, 215, 1);
+  background: $PrimaryColor;
   width: 368px;
   display: none;
   position: absolute;
@@ -12,6 +12,7 @@
   list-style: none;
   margin: 0; 
   text-align:start;
+  border-radius: 5%;
 }
   span{
     margin-left: 20px;
