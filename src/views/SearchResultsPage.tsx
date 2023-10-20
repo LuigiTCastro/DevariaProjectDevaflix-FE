@@ -1,6 +1,7 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import { MovieCard } from "../components/General/MovieCard";
+import { Header } from "../components/General/Header";
 
 
 const SearchResultsPage: React.FC = () => {
@@ -12,15 +13,18 @@ const SearchResultsPage: React.FC = () => {
   };
 
   return (
-    <div className="SearchResultsPage ">
+   <>
+       <Header/>
+    <div className="SearchResultsPage">           
       <h2>Resultados da Pesquisa</h2>
       <div className="movies-container">
         {searchResults.map((movie) => (
           <MovieCard key={movie.imdbID} movie={movie} />
         ))}
       </div>
-      <button onClick={handleGoBack}>Voltar</button>
+      <button onClick={handleGoBack}>Voltar</button>      
     </div>
+    </>
   );
 };
 

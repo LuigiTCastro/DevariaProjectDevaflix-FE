@@ -5,7 +5,11 @@
 @media screen and (min-width: $DesktopBreakpoint) {
 
   .SearchResultsPage{
+     width: 100%;
+
+
     h2{
+      margin-top: 120px;
       text-align: center;
       font-size: 20px;
       color: $WhiteColor;

@@ -19,17 +19,23 @@ export const Movie: React.FC = () => {
   console.log(imdbID, "imdbID");
 
   // Estado para armazenar os detalhes do filme
-  const [movie, setMovie] = useState<MovieProps | null>(null);
+  interface MovieProps {
+    title: string;
+    poster: string;
+    genre: string;
+    director: string;
+    actor: string;
+    imdbRating: string;
+    plot: string;
+  }
 
-  // Define isAuthenticated (replace this with your actual authentication logic)
-  const isAuthenticated = true; // Replace with your authentication logic
+const [movie, setMovie] = useState<MovieProps | null>(null); 
 
-  const handleLoginClick = () => {
-    const redirectPath = isAuthenticated ? "/mypage" : "/home";
-    window.location.href = redirectPath;
-  };
-
-  // Hook useEffect para buscar detalhes do filme assim que o componente é montado
+ const handleLoginClick = () => {
+   // Navegar para a página anterior
+   window.history.back();
+ };
+   
   useEffect(() => {
     const getMovie = async (imdbID: string | undefined) => {
       const query = `imdbID=${imdbID}`;
@@ -43,7 +49,6 @@ export const Movie: React.FC = () => {
   return (
     <div className="containerMovie">
       <div className="movie-page">
-        {/* Renderiza os detalhes do filme se estiverem disponíveis */}
         {movie && (
           <>
             <h1>{movie.title}</h1>
@@ -63,7 +68,7 @@ export const Movie: React.FC = () => {
             <p>
               <strong>Enredo:</strong> {movie.plot}
             </p>
-        
+
             <button
               className="btnHeaderSair"
               type="button"
@@ -74,6 +79,6 @@ export const Movie: React.FC = () => {
           </>
         )}
       </div>
-    </div>
-  );
+  </div>
+);
 };

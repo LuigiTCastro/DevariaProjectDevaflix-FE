@@ -3,9 +3,7 @@ import imgAvatar from "../../assets/imagens/imgAvatar.svg";
 import iconSair from "../../assets/imagens/imgsair.svg";
 import Dropdown from "./Dropdown";
 import Search from "./Search";
-import { SearchServices } from "../../Services/SearchServices";
 
-const searchServices = new SearchServices();
 
 export const Navigation = () => {
   const id = localStorage.getItem("id") || "";
