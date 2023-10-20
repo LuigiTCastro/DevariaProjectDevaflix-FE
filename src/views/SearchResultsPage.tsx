@@ -13,17 +13,17 @@ const SearchResultsPage: React.FC = () => {
   };
 
   return (
-   <>
-       <Header/>
-    <div className="SearchResultsPage">           
-      <h2>Resultados da Pesquisa</h2>
-      <div className="movies-container">
-        {searchResults.map((movie) => (
-          <MovieCard key={movie.imdbID} movie={movie} />
-        ))}
+    <>
+      <Header />
+      <div className="SearchResultsPage ">
+        <h2>Resultados da Pesquisa</h2>
+        <div className="movies-container">
+          {searchResults.map((movie) => (
+            <MovieCard key={movie.imdbID} movie={movie} />
+          ))}
+        </div>
+        <button onClick={handleGoBack}>Voltar</button>
       </div>
-      <button onClick={handleGoBack}>Voltar</button>      
-    </div>
     </>
   );
 };

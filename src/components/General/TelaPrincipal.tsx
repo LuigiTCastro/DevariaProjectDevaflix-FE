@@ -46,7 +46,7 @@ export const TelaPrincipal = () => {
     return topMovies
       .sort((a, b) => b.imdbRating - a.imdbRating)
       .filter((movie) => movie.genre.toLowerCase().includes(category))
-      .slice(0, 10)
+      .slice(0, 9)
       .map((movie) => <MovieCard key={movie.imdbID} movie={movie} />);
   };
 

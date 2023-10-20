@@ -7,7 +7,7 @@ import iconChave from "../assets/imagens/imgChave.svg";
 import { PublicInput } from "../components/General/PublicInput";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { UpLoadImagem } from "../components/General/UpLoadImagem";
+
 import {
   validarNome,
   validarEmail,
@@ -15,6 +15,7 @@ import {
   validarConfirmacaoSenha,
 } from "../utils/validators";
 import { RegisterServices } from "../Services/RegisterServices";
+import { AvatarInput } from "../components/General/AvatarInput";
 
 const registerServices = new RegisterServices();
 
@@ -64,7 +65,7 @@ export const Register = () => {
 
       await registerServices.register(body);
       setLoading(false);
-      return navigate("/?success=true");
+      navigate("/login", { replace: true });
     } catch (e: any) {
       console.log("Erro ao efetuar cadastro:", e);
       setLoading(false);
@@ -81,7 +82,7 @@ export const Register = () => {
         <img src={logo} alt="Logo Devaflix" className="logo" />
 
         <form className="formInicial">
-          <UpLoadImagem />
+          <AvatarInput image={image} setImage={setImage} />
 
           {error && <p className="error">{error}</p>}
 
