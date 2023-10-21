@@ -5,6 +5,7 @@ import "../../assets/styles/likeCard.scss";
 
 interface MovieCardProps {
   movie: {
+    _id:string;
     imdbID: string;
     title: string;
     translatedTitle: string;
