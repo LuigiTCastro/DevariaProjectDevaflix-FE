@@ -43,11 +43,14 @@ export const TelaPrincipal = () => {
   }, [moviesFetched]);
 
   const renderMoviesByCategory = (category: string) => {
-    return topMovies
+    const moviesInCategory = topMovies
       .sort((a, b) => b.imdbRating - a.imdbRating)
       .filter((movie) => movie.genre.toLowerCase().includes(category))
-      .slice(0, 10)
-      .map((movie) => <MovieCard key={movie.imdbID} movie={movie} />);
+      .slice(0, 10);
+  
+    return moviesInCategory.map((movie, index) => (
+      <MovieCard key={movie.imdbID + category + index} movie={movie} />
+    ));
   };
 
   return (

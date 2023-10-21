@@ -9,23 +9,18 @@ export const InputDrop = ({
 }: {
    filtro: string;
    texto: string;
-   updateQuery: (filtro: string) => void; // Altere o tipo de retorno para string
+   updateQuery: (filtro: string, valor:string) => void; // Altere o tipo de retorno para string
 }) => {
    const [filter, setFilter] = useState('');
 
-   const aoDigitar = (e: any) => {
+   const onTyping = (e: any) => {
       setFilter(e.target.value);
    };
    
-   const sendSearch = (filter: string) => {
+   const onBlurHandler  = () => {
       const newQueryString = `&${filtro}=${filter}`; 
-      updateQuery(newQueryString); // Chame a função e retorne o novo valor
-    };
-  
-    const onKey = (e: any) => {
-      if (e.key === "Enter") {
-        sendSearch(filter);
-      }
+      console.log(newQueryString)
+      updateQuery(filtro, filter);
     };
    
    return (
@@ -34,8 +29,8 @@ export const InputDrop = ({
          <input 
             className='inputDrop' 
             placeholder={texto}   
-            onChange={aoDigitar}      
-            onKeyDown={onKey}
+            onChange={onTyping}      
+            onBlur={onBlurHandler} 
             value={filter} 
          />
       </div>
