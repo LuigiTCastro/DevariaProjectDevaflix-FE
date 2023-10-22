@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "../assets/styles/movie.scss";
 import { SearchServices } from "../Services/SearchServices";
+import imgPosterNotFound from "../assets/imagens/PosterNotFound.jpg"
 
 // Declaração da instância de SearchServices para realizar a busca
 const searchServices = new SearchServices();
@@ -25,7 +26,7 @@ export const Movie: React.FC = () => {
     genre: string;
     director: string;
     actor: string;
-    imdbRating: string;
+    imdbRating: number;
     plot: string;
   }
 
@@ -52,7 +53,7 @@ const [movie, setMovie] = useState<MovieProps | null>(null);
         {movie && (
           <>
             <h1>{movie.title}</h1>
-            <img src={movie?.poster || ""} alt={movie?.title} />
+            <img src={movie.poster == "N/A" ? imgPosterNotFound : movie.poster} alt={movie?.title} />
             <p>
               <strong>Gênero:</strong> {movie.genre}
             </p>
@@ -63,7 +64,7 @@ const [movie, setMovie] = useState<MovieProps | null>(null);
               <strong>Atores:</strong> {movie.actor}
             </p>
             <p>
-              <strong>Avaliação IMDb:</strong> {movie.imdbRating}
+              <strong>Avaliação IMDb:</strong> {movie.imdbRating != 0 ? movie.imdbRating : "N/A"}
             </p>
             <p>
               <strong>Enredo:</strong> {movie.plot}

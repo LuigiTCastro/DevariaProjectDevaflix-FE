@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FaStar, FaThumbsUp, FaThumbsDown } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import imgPosterNotFound from "../../assets/imagens/PosterNotFound.jpg"
 import "../../assets/styles/likeCard.scss";
 
 interface MovieCardProps {
@@ -40,10 +41,10 @@ export const MovieCard: React.FC<MovieCardProps> = ({ movie, showLink = true }) 
 
   return (
     <div className="movie-card">
-      <img src={movie.poster} alt={movie.title} />
+      <img src={movie.poster == "N/A" ? imgPosterNotFound : movie.poster} alt={movie.title} />
       <h2>{movie.translatedTitle}</h2>
       <div className="icons-container">
-        <FaStar className="star-icon" /> {movie.imdbRating}
+        <FaStar className="star-icon" /> {movie.imdbRating != 0 ? movie.imdbRating : "N/A"}
         {isOnMyPage() && (
           <>
             <button className="like-button" onClick={handleLikeToggle}>
