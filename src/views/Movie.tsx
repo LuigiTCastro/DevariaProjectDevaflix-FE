@@ -11,13 +11,11 @@ export const Movie: React.FC = () => {
   // Função para obter o ID do IMDb da rota
   const getImdbID = () => {
     const routeParams = useParams();
-    console.log("parâmetro de rota", routeParams);
     return routeParams;
   };
 
   // Obtém o ID do IMDb da rota
   const imdbID = getImdbID().id;
-  console.log(imdbID, "imdbID");
 
   // Estado para armazenar os detalhes do filme
   interface MovieProps {
@@ -41,7 +39,6 @@ const [movie, setMovie] = useState<MovieProps | null>(null);
     const getMovie = async (imdbID: string | undefined) => {
       const query = `imdbID=${imdbID}`;
       const details = await searchServices.details(query);
-      console.log(details);
       setMovie(details.data);
     };
     getMovie(imdbID);
