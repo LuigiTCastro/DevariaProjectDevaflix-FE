@@ -40,12 +40,10 @@ export const MovieCard: React.FC<MovieCardProps> = ({ movie, showLink = true }) 
   let movieRating
 
   const loggedUserLiked = () => {
-    console.log(ratingObj.likes.includes(myId))
     return ratingObj && ratingObj.likes.includes(myId);
   };
   
   const loggedUserDisliked = () => {
-    console.log(ratingObj.dislikes.includes(myId))
     return ratingObj && ratingObj.dislikes.includes(myId);
   };
 
@@ -114,8 +112,8 @@ export const MovieCard: React.FC<MovieCardProps> = ({ movie, showLink = true }) 
   }, [movie._id, ratingObj.likes, ratingObj.dislikes, myId]);
   return (
     <div className="movie-card">
+      <p>{movie.translatedTitle}</p>
       <img src={movie.poster == "N/A" ? imgPosterNotFound : movie.poster} alt={movie.title} />
-      <h2>{movie.translatedTitle}</h2>
       <div className="icons-container">
         <FaStar className="star-icon" /> {movie.imdbRating != 0 ? movie.imdbRating : "N/A"}
         {isOnMyPage() && (
