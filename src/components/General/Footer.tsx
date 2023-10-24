@@ -1,6 +1,9 @@
+import { Navigation } from "./Navigation";
 
 export const Footer = () => {
    return(
-     <h1>Footer</h1>
+     <div className=".ContainerFooter">
+      <Navigation/>
+     </div>
    );
 }

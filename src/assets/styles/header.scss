@@ -1,34 +1,56 @@
 @import './configs.scss';
 
-.ContainerHeader{
+.ContainerHeader {
+
+    .SearchContainer,
+    .IconeHome,
+    .AvatarMini,
+    .BtnEntrar,
+    .IconeSair {
+        display: none;
+    }
+
     position: fixed;
     top: 0;
     left: 0;
     display: flex;
-    width: 100%;   
+    width: 100%;
     background-color: $WhiteColor;
     align-items:center;
-    justify-content: center;     
+    justify-content: center;
     border-bottom: 0.5px solid $GreyColor2;
+
+    gap:100px;
+
+    .ImgLogo {
+        width: 35%;
+
+    }
+
+    button.BtnDropdown{
+        display: flex;
+
     gap:100px; 
    
     .ImgLogo{
      width: 35%;
      cursor: pointer;
    
+
     }
-    @media screen and (min-width: $DesktopBreakpoint) { 
+
+    @media screen and (min-width: $DesktopBreakpoint) {
         width: 100vw;
-        justify-content: center;
+        justify-content: space-between;
         padding: 20px 0;
-        gap:130px; 
-        
-        .ImgLogo{
+        gap: 130px;
+
+        .ImgLogo {
             width: 15%;
             margin-left: 4%;
         }
-        
-        .ContainerNavigation{
+
+        .ContainerNavigation {
             display: flex;
             width: 50%;
             margin-right: 0%;
@@ -36,6 +58,13 @@
             justify-content: space-evenly;
             margin-left: -70px;
             gap: 15px;
-        }  
+
+            .SearchContainer,
+            .IconeHome,
+            .AvatarMini,
+            .BtnEntrar .IconeSair {
+                display: flex;
+            }
+        }
     }
-    }
+}
