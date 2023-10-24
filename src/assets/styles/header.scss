@@ -17,6 +17,15 @@
     width: 100%;
     background-color: $WhiteColor;
     align-items:center;
+
+    justify-content: center;     
+    border-bottom: 0.5px solid $GreyColor;
+    gap:80px; 
+   
+    .ImgLogo{
+     width: 35%;
+   
+
     justify-content: center;
     border-bottom: 0.5px solid $GreyColor2;
 
@@ -25,6 +34,7 @@
     .ImgLogo {
         width: 35%;
         cursor: pointer;
+
 
     }
 

@@ -67,8 +67,8 @@ export const TelaPrincipal = () => {
   return (
     <div className="container">
       <h2 className="title">Filmes</h2>
-      <p className="titleCategory">Comédia</p>
-      <div className="movies-container">{renderMoviesByCategory("comedy")}</div>
+      <p className="titleCategory">Comédia</p>     
+      <div className="movies-container">{renderMoviesByCategory("comedy")}</div>      
       <p className="titleCategory">Ação</p>
       <div className="movies-container">{renderMoviesByCategory("action")}</div>
       <p className="titleCategory">Drama</p>
