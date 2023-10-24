@@ -15,6 +15,7 @@ interface MovieCardProps {
     translatedTitle: string;
     poster: string;
     imdbRating: number;
+    duracao:string;
     director: string;
     actor: string;
     plot: string;
