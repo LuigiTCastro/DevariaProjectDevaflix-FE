@@ -50,7 +50,6 @@
   .movie-card {
     width: 100%;
     text-align: center;
-   
 
     img,
     h2,
@@ -97,6 +96,15 @@
 }
 
 @media screen and (min-width: $DesktopBreakpoint) {
+  .movie-card {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center; 
+  
+    
+  }
  
   .containerMovie .movie-page{
      width: 50%;
@@ -131,5 +139,7 @@
  button.btnHeaderSair{
    width: 27%;
  }
+
+
 }
 

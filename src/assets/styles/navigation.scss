@@ -10,6 +10,9 @@
 }
 .button.BtnDropdown{
   margin-top: 20px;
+  margin-left: 0px;
+  width: 80px;
+ 
 }
 
 
@@ -19,14 +22,18 @@
   background-color: transparent;
   margin-left: 5px;
   padding: 5px;
-  font-size: 18px;
+  font-size: 15px;
+  width: 100%;
+  font-weight: 200;
+ 
 
   
   &::placeholder {
-    color: $WhiteColor;
+    color: $GreyColor1;
     opacity: 1;
 
 }
+
 
 
 }
@@ -102,6 +109,8 @@
     }  
       
   }
+
+ 
   
   }
   

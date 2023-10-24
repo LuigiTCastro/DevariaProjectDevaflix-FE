@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { FaStar, FaThumbsUp, FaThumbsDown } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "../../assets/styles/likeCard.scss";
@@ -38,6 +38,7 @@ export const MovieCard: React.FC<MovieCardProps> = ({ movie, showLink = true }) 
   };
 
   return (
+    
     <div className="movie-card">
       <img src={movie.poster} alt={movie.title} />
       <h2>{movie.translatedTitle}</h2>
@@ -56,6 +57,9 @@ export const MovieCard: React.FC<MovieCardProps> = ({ movie, showLink = true }) 
         )}
       </div>
       {showLink && <Link to={`/movie/${movie.imdbID}`}>Detalhes</Link>}
-    </div>
+    </div>   
   );
-};
+}; 
+
+
+
