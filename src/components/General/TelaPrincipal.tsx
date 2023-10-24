@@ -15,19 +15,29 @@ export const TelaPrincipal = () => {
   const [moviesFetched, setMoviesFetched] = useState(false);
 
   const fetchMovies = async () => {
+    let imdbIdList: string[] = [];
+    let uniqueMovies = [];
+
     const comedyMovies = await getMoviesByCategory("genre", "comedy");
     const actionMovies = await getMoviesByCategory("genre", "action");
     const dramaMovies = await getMoviesByCategory("genre", "drama");
     const romanceMovies = await getMoviesByCategory("genre", "romance");
 
-    const allMovies = [
+    let allMovies = [
       ...comedyMovies,
       ...actionMovies,
       ...dramaMovies,
       ...romanceMovies,
     ];
+    for (const movie of allMovies) {
+      if(!imdbIdList.includes(movie.imdbID)) {
+        imdbIdList.push(movie.imdbID);
+        uniqueMovies.push(movie);
+      }
+    }
 
-    setTopMovies(allMovies);
+
+    setTopMovies(uniqueMovies);
     setMoviesFetched(true);
   };
 

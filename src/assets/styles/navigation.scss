@@ -1,13 +1,82 @@
 
 @import './configs.scss';
 
-.SearchContainer,
-.IconeHome,
-.AvatarMini,
-.BtnEntrar,
-.IconeSair{
-    display: none;
+
+.ContainerNavigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;         
+  background: #FFFFFF;
+  padding: 8px;
+  gap: 10px;
+ 
+
+  .imgAvatar{
+   
+    align-items: center;
+    width: 40px;
+    height:40px;
+    margin-top: 10px;     
+    }
+  
+    .IconeSair{
+      display: inline;
+      align-items: center;
+     width: 30px;
+     height: 30px;
+     margin-top: 15px;    
+     margin-left: 25px; 
+     cursor: pointer;
+  
+    }
+    
+}    
+
+
+
+
+.btnHeaderEntrar{
+display: flex;
+text-align: center;
+width: 85px ;
+height: 35px ;
+justify-content: center;
+border-radius: 4px;
+margin: 0;
+font-weight: 400;
+font-size: 20px;
+line-height: 40px;
 }
+
+
+
+
+.SearchContainer {
+position: relative;  
+background-color: $PrimaryColor7;
+border-radius: 8px;
+display: flex;
+flex: 2;
+width: 10px;
+height: 30px;
+margin-right: 20px;
+
+
+
+.imgLupa {
+  width: 20px;
+  height: 20px;
+  padding: 8px;
+  cursor:pointer;
+  position: absolute;
+
+}  
+  
+}
+
+// marcação de onde começava o codigo
+
+
 .button.BtnDropdown{
   margin-top: 20px;
   margin-left: 0px;
@@ -40,56 +109,57 @@
 
 
 @media screen and (min-width: $DesktopBreakpoint) {  
-  .ContainerNavigation{
-      display: flex;
-      align-items: center;
-      justify-content: center;         
-      background: $WhiteColor;
-      gap: 10px;
-
-      .imgAvatar{
-        align-items: center;
-        width: 45px;
-        height:45px;
-        margin-top: 10px;     
-        }
-
-        .IconeSair{
-          display: inline;
-          align-items: center;
-         width: 50px;
-         height: 50px;
-         margin-top: 15px;    
-         margin-left: 25px; 
-         cursor: pointer;
-
-        }
-  }    
-    
-  
-  .SearchContainer,
-   .IconeHome,
-   .AvatarMini,
-   .BtnEntrar
-   .IconeSair{
-       display: flex;
-   }
-
-   .btnHeaderEntrar{
+  .ContainerNavigation {
     display: flex;
-    text-align: center;
-    width: 135px ;
-    height: 45px ;
-    justify-content: center;
-    border-radius: 4px;
-    margin: 0;
-    font-weight: 400;
-    font-size: 30px;
-    line-height: 40px;
-   }
+    align-items: center;
+    justify-content: center;         
+    background: $WhiteColor;
+    gap: 10px;
+
+    .imgAvatar{
+      align-items: center;
+      width: 45px;
+      height:45px;
+      margin-top: 10px;     
+      }
+
+      .IconeSair{
+        display: inline;
+        align-items: center;
+       width: 50px;
+       height: 50px;
+       margin-top: 15px;    
+       margin-left: 25px; 
+       cursor: pointer;
+
+      }
+}    
+  
+
+.SearchContainer,
+ .IconeHome,
+ .AvatarMini,
+ .BtnEntrar
+ .IconeSair{
+     display: flex;
+ }
+
+ .btnHeaderEntrar{
+  display: flex;
+  text-align: center;
+  width: 135px ;
+  height: 45px ;
+  justify-content: center;
+  border-radius: 4px;
+  margin: 0;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 40px;
+ }
+
 
   
-    
+
 
   .SearchContainer {
     position: relative;  
@@ -111,6 +181,27 @@
   }
 
  
+
+.SearchContainer {
+  position: relative;  
+  background-color: $PrimaryColor7;
+  border-radius: 8px;
+  display: flex;
+  flex: 2;
+  width: 372px;
+  height: 46px;
+  margin-right: 20px;
+
+  .imgLupa {
+    width: 30px;
+    height: 30px;
+    padding: 8px;
+    cursor:pointer;
+
+  }  
+    
+}
+
   
   }
   
