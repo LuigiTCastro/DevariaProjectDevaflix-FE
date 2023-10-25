@@ -1,73 +1,66 @@
-@import './configs.scss';
+@import "./configs.scss";
 
 .ContainerHeader {
+  .SearchContainer,
+  .IconeHome,
+  .AvatarMini,
+  .BtnEntrar,
+  .IconeSair {
+    display: none;
+  }
 
-    .SearchContainer,
-    .IconeHome,
-    .AvatarMini,
-    .BtnEntrar,
-    .IconeSair {
-        display: none;
-    }
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  background-color: $WhiteColor;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 0.5px solid $GreyColor;
+  gap: 80px;
 
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
-    width: 100%;
-    background-color: $WhiteColor;
-    align-items:center;
-    justify-content: center;     
-    border-bottom: 0.5px solid $GreyColor;
-    gap:80px; 
-   
-    .ImgLogo{
-     width: 35%; 
+  .ImgLogo {
+    width: 35%;
     justify-content: center;
     //border-bottom: 0.5px solid $GreyColor;
-    gap:100px;
+    gap: 100px;
 
     .ImgLogo {
-        width: 35%;
-        cursor: pointer;
-
-
+      width: 35%;
+      cursor: pointer;
     }
-
-   
-}
-button.BtnDropdown{
+  }
+  button.BtnDropdown {
     display: flex;
+  }
 
-}
-  
+  @media screen and (min-width: $DesktopBreakpoint) {
+    width: 100vw;
+    //justify-content: space-between;
+    padding: 20px 0;
+    gap: 100px;
 
-    @media screen and (min-width: $DesktopBreakpoint) {
-        width: 100vw;
-        //justify-content: space-between;
-        padding: 20px 0;
-        gap: 100px;
-
-        .ImgLogo {
-            width: 15%;
-            margin-left: 4%;
-        }
-
-        .ContainerNavigation {
-            display: flex;
-            width: 40%;
-            margin-right: 0%;
-            align-items: center;
-            justify-content: space-evenly;
-            margin-left: -70px;
-            gap: 15px;
-
-            .SearchContainer,
-            .IconeHome,
-            .AvatarMini,
-            .BtnEntrar .IconeSair {
-                display: flex;
-            }
-        }
+    .ImgLogo {
+      width: 15%;
+      margin-left: 4%;
     }
+
+    .ContainerNavigation {
+      display: flex;
+      width: 40%;
+      margin-right: 0%;
+      align-items: center;
+      justify-content: space-evenly;
+      margin-left: -70px;
+      gap: 15px;
+
+      .SearchContainer,
+      .IconeHome,
+      .AvatarMini,
+      .BtnEntrar .IconeSair {
+        display: flex;
+      }
+    }
+  }
 }
