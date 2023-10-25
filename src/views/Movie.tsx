@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import  { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "../assets/styles/movie.scss";
 import { SearchServices } from "../Services/SearchServices";
-import imgPosterNotFound from "../assets/imagens/PosterNotFound.jpg"
+import imgPosterNotFound from "../assets/imagens/PosterNotFound.jpg";
 
 // Declaração da instância de SearchServices para realizar a busca
 const searchServices = new SearchServices();
@@ -18,39 +18,39 @@ export const Movie: React.FC = () => {
   const imdbID = getImdbID().id;
   // Estado para armazenar os detalhes do filme
   interface MovieProps {
-    _id:string;
+    _id: string;
     imdbID: string;
     title: string;
     translatedTitle: string;
     poster: string;
     imdbRating: number;
-    duracao:string;
+    duracao: string;
     director: string;
     actor: string;
     plot: string;
     videos: string[];
     genre: string;
   }
-  
-  const [movie, setMovie] = useState<MovieProps | null>(null); 
+
+  const [movie, setMovie] = useState<MovieProps | null>(null);
   const trailers = movie?.videos;
 
   const handleLoginClick = () => {
     // Navegar para a página anterior
     window.history.back();
   };
-   
+
   useEffect(() => {
     const getMovie = async (imdbID: string | undefined) => {
       const query = `imdbID=${imdbID}`;
       const details = await searchServices.details(query);
       setMovie(details.data);
-      console.log("Trailers =>",movie?.videos)
+      console.log("Trailers =>", movie?.videos);
     };
     getMovie(imdbID);
   }, [imdbID]);
 
-  const renderTrailers = (trailers: string[]) => {
+  /*const renderTrailers = (trailers: string[]) => {
     console.log(trailers);
     return trailers.map((trailer) => (
       <iframe
@@ -60,10 +60,22 @@ export const Movie: React.FC = () => {
         title={`Trailer `}
       ></iframe>
     ));
+  };*/
+  const renderTrailers = (trailers: string[]) => {
+    console.log(trailers);
+    if (trailers.length > 0) {
+      return (
+        <iframe
+          width="420"
+          height="315"
+          src={trailers[0]}
+          title="Trailer"
+        ></iframe>
+      );
+    } else {
+      return <p>Nenhum trailer disponível.</p>;
+    }
   };
-  
-  
-
 
   return (
     <div className="containerMovie">
@@ -72,7 +84,10 @@ export const Movie: React.FC = () => {
           <>
             <h1>{movie.translatedTitle}</h1>
             <p>Nome original:{movie.title}</p>
-            <img src={movie.poster == "N/A" ? imgPosterNotFound : movie.poster} alt={movie?.title} />
+            <img
+              src={movie.poster == "N/A" ? imgPosterNotFound : movie.poster}
+              alt={movie?.title}
+            />
             <p>
               <strong>Gênero:</strong> {movie.genre}
             </p>
@@ -86,7 +101,8 @@ export const Movie: React.FC = () => {
               <strong>Atores:</strong> {movie.actor}
             </p>
             <p>
-              <strong>Avaliação IMDb:</strong> {movie.imdbRating != 0 ? movie.imdbRating : "N/A"}
+              <strong>Avaliação IMDb:</strong>{" "}
+              {movie.imdbRating != 0 ? movie.imdbRating : "N/A"}
             </p>
             <p>
               <strong>Enredo:</strong> {movie.plot}
@@ -109,6 +125,6 @@ export const Movie: React.FC = () => {
           </>
         )}
       </div>
-  </div>
-);
+    </div>
+  );
 };

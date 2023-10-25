@@ -48,13 +48,11 @@ npm install
 </div>
 
 #
-## Fontes de Dados
-Usamos a API TMDB e MDB para buscar informações sobre filmes e séries.
 ## Banck-end
 https://github.com/LuigiTCastro/DevariaProjectDevaflix-BE.git
  #
 ### Autor
-* **Aline**
+* **Aline Oliveira**
 * **Eliane Henriqueta**
 * **Luigi Castro**
 * **Renata Fernandes**

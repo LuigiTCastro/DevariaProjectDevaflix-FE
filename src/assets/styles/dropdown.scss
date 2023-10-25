@@ -53,6 +53,7 @@ span {
   width: 30px;
   height: 30px;
   margin-left: -15px;
+  margin-right: 12px;
 }
 
 .Dropdown-li span {
@@ -90,6 +91,7 @@ button.BtnDropdown {
   margin-top: 0px;
   // margin-left: -5px;
 }
+
 
 @media screen and (min-width: $DesktopBreakpoint) {
   .DropdownMenu {
@@ -131,6 +133,8 @@ button.BtnDropdown {
     }
   }
 
+
+//ver porque tem 2 vezes
   @media screen and (min-width: $DesktopBreakpoint) {
     width: 70%;
     margin-top: 10px;
