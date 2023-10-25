@@ -29,7 +29,7 @@ export const Navigation = () => {
   };
 
   return (
-    <div className="ContainerNavigation ">
+    <div className="ContainerNavigation Footer">
       <Search />
       <Dropdown />
       <div className="AvatarMini login">

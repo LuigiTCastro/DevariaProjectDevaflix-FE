@@ -1,46 +1,45 @@
 @import './configs.scss';
 
 .SearchContainer,
-    .IconeHome,
-    .AvatarMini,
-    .BtnEntrar,
-    .IconeSair {
-        display: flex;
-    }
-
-.ContainerFooter.ContainerNavigation{   
-    width: 100vw;
-    display: flex; 
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    background-color: $PrimaryColor3;
-    border-top: 0.5px solid $PrimaryColor5;
-    padding: 30px;
-    
-    
-   } 
-
-   button.BtnDropdown{
-    display: none;
-   } 
-
-    
-     
- 
-
-    @media screen and (min-width: $DesktopBreakpoint) {
-     
-         .ContainerNavigation{ // tira o footer do desktop
-            display: none;
-        }
-
-       
-
-    }
-         
+.IconeHome,
+.AvatarMini,
+.BtnEntrar,
+.IconeSair {
+  display: flex;
+}
 
 
 
-    
-      
+
+.ContainerFooter.ContainerNavigation {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: $PrimaryColor3;
+  border-top: 0.5px solid $PrimaryColor5;
+  padding: 30px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+button.BtnDropdown {
+  display: none;
+}
+/*.rodape{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+
+}*/
+
+@media screen and (min-width: $DesktopBreakpoint) {
+  .ContainerNavigation {
+    display:none;
+}
+}
+
+

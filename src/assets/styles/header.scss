@@ -17,18 +17,14 @@
     width: 100%;
     background-color: $WhiteColor;
     align-items:center;
-
     justify-content: center;     
     border-bottom: 0.5px solid $GreyColor;
     gap:80px; 
    
     .ImgLogo{
-     width: 35%;
-   
-
+     width: 35%; 
     justify-content: center;
-    border-bottom: 0.5px solid $GreyColor2;
-
+    //border-bottom: 0.5px solid $GreyColor;
     gap:100px;
 
     .ImgLogo {
@@ -38,16 +34,19 @@
 
     }
 
-    button.BtnDropdown{
-        display: flex;
+   
+}
+button.BtnDropdown{
+    display: flex;
 
-    }
+}
+  
 
     @media screen and (min-width: $DesktopBreakpoint) {
         width: 100vw;
-        justify-content: space-between;
+        //justify-content: space-between;
         padding: 20px 0;
-        gap: 130px;
+        gap: 100px;
 
         .ImgLogo {
             width: 15%;
@@ -56,7 +55,7 @@
 
         .ContainerNavigation {
             display: flex;
-            width: 50%;
+            width: 40%;
             margin-right: 0%;
             align-items: center;
             justify-content: space-evenly;
