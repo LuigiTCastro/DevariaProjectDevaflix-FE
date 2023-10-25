@@ -1,35 +1,53 @@
 @import './configs.scss';
 
 .DropdownMenu {
-  //background-color: rgba(137, 126, 215, 0.52);
-  background: $PrimaryColor;
-  width: 368px;
+  background-color: $PrimaryColorWithOpacity;
+  width: 350px;
   display: none;
   position: absolute;
   top: 100%;
-  left: -270px;
-  color: $WhiteColor;
+  left: -260px; 
   list-style: none;
   margin: 0; 
   text-align:start;
-  border-radius: 5%;
+  border-radius: 3%;
 }
   span{
     margin-left: 20px;
   }
-  .linhaDivisoria{
-    width: 85%;
-   
+  .DropdownMenu {
+    li {
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+  
+      &:hover {
+        background-color: $PrimaryColor;
+        color: $WhiteColor;
+      }
+    }
+  }
+    
+  .BtnDropdown {
+    cursor: pointer;
+  
+    &:hover {
+      background-color: $PrimaryColor7;
+      color: $WhiteColor;
+    }
   }
 
 
 .Dropdown-li {
   display: flex;
-  align-items: center;
-  margin-left: 12px;
-  padding-bottom: 15px;
+  align-items: center;  
+  padding-bottom: 10px;
+  //margin-left: -5px;
   font-size: 20px;
   gap: 10px;
+  border-bottom: 1px solid $GreyColor1; 
+}
+.Dropdown-li:nth-child(6) {
+ margin-bottom: none;
 }
 
 
@@ -57,9 +75,6 @@
   margin-top: 15px;
 }
 
-.Dropdown-li:nth-child(5) {
-  border-bottom: none;
-}
 
 .open .DropdownMenu {
   display: block;
@@ -77,28 +92,60 @@ button.BtnDropdown {
   background-color: transparent;
   cursor: pointer; 
   margin-top: 0px;
+ // margin-left: -5px;
   }
+
+  
 
   @media screen and (min-width: $DesktopBreakpoint) {
     .DropdownMenu {
-      left: -100px;
+      left: -100px;     
+    }        
 
+   
+    .Dropdown-li:nth-child(7) {
+      border-bottom: none;     
     }
-    .Dropdown-li{
+    
+    ul.DropdownMenu{
+      padding: 0px;
+    }  
+    .Dropdown-li {
       margin-left: 0px;
       gap: 0px;
-     padding-bottom: 3px;
-    }
-
+      padding-bottom: 3px;
+    }  
+    
     .Dropdown-li:nth-child(8) {
       border-bottom: 20px;
+    }       
+
+  }
+
+  .ContainerInputDrop {
+    display: flex;
+    justify-items: flex-end;
+    justify-content: left;
+    width: 50%;
+    margin-top: 10px;
+    margin-left: 20px;
+    //border: 0.5px solid $PrimaryColor;
+    border-radius: 5%;
+
+    input{  
+      &::placeholder {
+          color: $WhiteColor;
+          opacity: 1;
+      }
     }
-
     
-
-
-         
-
+    
+  
+    @media screen and (min-width: $DesktopBreakpoint) {
+      width: 70%;
+      margin-top: 10px;
+      margin-left: 15px;
+    }
   }
 
  

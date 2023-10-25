@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+
+import { useState, useEffect } from "react";
 import { FaStar, FaThumbsUp, FaThumbsDown } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import imgPosterNotFound from "../../assets/imagens/PosterNotFound.jpg"
@@ -112,8 +113,9 @@ export const MovieCard: React.FC<MovieCardProps> = ({ movie, showLink = true }) 
     fetchRating();
   }, [movie._id, ratingObj.likes, ratingObj.dislikes, myId]);
   return (
+    
     <div className="movie-card">
-      <p>{movie.translatedTitle}</p>
+      <p className="titleCard">{movie.translatedTitle}</p>
       <img src={movie.poster == "N/A" ? imgPosterNotFound : movie.poster} alt={movie.title} />
       <div className="icons-container">
         <FaStar className="star-icon" /> {movie.imdbRating != 0 ? movie.imdbRating : "N/A"}
@@ -130,6 +132,9 @@ export const MovieCard: React.FC<MovieCardProps> = ({ movie, showLink = true }) 
         <span>{(ratingObj.percentageLikes)*100}%</span>
       </div>
       {showLink && <Link to={`/movie/${movie.imdbID}`}>Detalhes</Link>}
-    </div>
+    </div>   
   );
-};
+}; 
+
+
+

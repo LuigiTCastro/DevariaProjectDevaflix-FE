@@ -44,7 +44,7 @@ body {
 input {
     font-size: 16px;
     letter-spacing: 0.01em;
-    color: $GreyColor1;
+    color: $WhiteColor;
     border-radius: 0;
     border: none;
     outline: none;
@@ -54,16 +54,16 @@ input {
     }
 
     &::placeholder {
-        color: $GreyColor2;
+        color: $WhiteColor;
         opacity: 1;
     }
 
     &:-ms-input-placeholder {
-        color: $GreyColor2;
+        color: $WhiteColor;
     }
 
     &::-ms-input-placeholder {
-        color: $GreyColor2;
+        color: $GreyColor;
     }
 }
 
@@ -192,7 +192,6 @@ body {
 @import './navigation.scss';
 @import './telaprincipal.scss';
 @import './footer.scss';
-@import './inputDrop.scss';
 @import './search.scss';
 @import './movieGrid.scss';
 @import './modal.scss';

@@ -27,6 +27,7 @@
      margin-top: 15px;    
      margin-left: 25px; 
      cursor: pointer;
+     
   
     }
     
@@ -79,6 +80,9 @@ margin-right: 20px;
 
 .button.BtnDropdown{
   margin-top: 20px;
+  margin-left: 0px;
+  width: 80px;
+ 
 }
 
 
@@ -88,14 +92,18 @@ margin-right: 20px;
   background-color: transparent;
   margin-left: 5px;
   padding: 5px;
-  font-size: 18px;
+  font-size: 15px;
+  width: 100%;
+  font-weight: 200;
+ 
 
   
   &::placeholder {
-    color: $WhiteColor;
+    color: $GreyColor1;
     opacity: 1;
 
 }
+
 
 
 }
@@ -153,6 +161,28 @@ margin-right: 20px;
 
   
 
+
+  .SearchContainer {
+    position: relative;  
+    background-color: $PrimaryColor7;
+    border-radius: 8px;
+    display: flex;
+    flex: 2;
+    width: 372px;
+    height: 46px;
+    //margin-right: 20px;
+
+    .imgLupa {
+      width: 370px;
+      height: 30px;
+      padding: 8px;
+      cursor:pointer;
+    }  
+      
+  }
+
+ 
+
 .SearchContainer {
   position: relative;  
   background-color: $PrimaryColor7;
@@ -163,15 +193,16 @@ margin-right: 20px;
   height: 46px;
   margin-right: 20px;
 
-  .imgLupa {
+ /*.imgLupa {
     width: 30px;
     height: 30px;
     padding: 8px;
     cursor:pointer;
 
-  }  
+  }  */
     
 }
+
   
   }
   
