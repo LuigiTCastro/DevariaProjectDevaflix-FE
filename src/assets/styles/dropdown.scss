@@ -1,4 +1,4 @@
-@import './configs.scss';
+@import "./configs.scss";
 
 .DropdownMenu {
   background-color: $PrimaryColorWithOpacity;
@@ -6,75 +6,71 @@
   display: none;
   position: absolute;
   top: 100%;
-  left: -260px; 
+  left: -260px;
   list-style: none;
-  margin: 0; 
-  text-align:start;
+  margin: 0;
+  text-align: start;
   border-radius: 3%;
 }
-  span{
-    margin-left: 20px;
-  }
-  .DropdownMenu {
-    li {
-      cursor: pointer;
-      transition: background-color 0.3s, color 0.3s;
-  
-      &:hover {
-        background-color: $PrimaryColor;
-        color: $WhiteColor;
-      }
-    }
-  }
-    
-  .BtnDropdown {
+span {
+  margin-left: 20px;
+}
+.DropdownMenu {
+  li {
     cursor: pointer;
-  
+    transition: background-color 0.3s, color 0.3s;
+
     &:hover {
-      background-color: $PrimaryColor7;
+      background-color: $PrimaryColor;
       color: $WhiteColor;
     }
   }
+}
 
+.BtnDropdown {
+  cursor: pointer;
+
+  &:hover {
+    background-color: $PrimaryColor7;
+    color: $WhiteColor;
+  }
+}
 
 .Dropdown-li {
   display: flex;
-  align-items: center;  
+  align-items: center;
   padding-bottom: 10px;
   //margin-left: -5px;
   font-size: 20px;
   gap: 10px;
-  border-bottom: 1px solid $GreyColor1; 
+  border-bottom: 1px solid $GreyColor1;
 }
 .Dropdown-li:nth-child(6) {
- margin-bottom: none;
+  margin-bottom: none;
 }
 
-
-.iconClose{
+.iconClose {
   width: 30px;
   height: 30px;
   margin-left: -15px;
 }
 
-
-.Dropdown-li span{
-   margin-top: 10px;
+.Dropdown-li span {
+  margin-top: 10px;
 }
 
 .DropdownSpan {
-   display: flex;
-   width: 330px;
-   justify-content: space-between;
+  display: flex;
+  width: 330px;
+  justify-content: space-between;
   font-size: 24px;
-  font-weight: bold; 
+  font-weight: bold;
   padding: 5px;
 }
 
 .Dropdown-li:nth-child(2) {
   margin-top: 15px;
 }
-
 
 .open .DropdownMenu {
   display: block;
@@ -90,64 +86,54 @@
 button.BtnDropdown {
   color: $PrimaryColor;
   background-color: transparent;
-  cursor: pointer; 
+  cursor: pointer;
   margin-top: 0px;
- // margin-left: -5px;
+  // margin-left: -5px;
+}
+
+@media screen and (min-width: $DesktopBreakpoint) {
+  .DropdownMenu {
+    left: -100px;
   }
 
-  
+  .Dropdown-li:nth-child(7) {
+    border-bottom: none;
+  }
+
+  ul.DropdownMenu {
+    padding: 0px;
+  }
+  .Dropdown-li {
+    margin-left: 0px;
+    gap: 0px;
+    padding-bottom: 3px;
+  }
+
+  .Dropdown-li:nth-child(8) {
+    border-bottom: 20px;
+  }
+}
+
+.ContainerInputDrop {
+  display: flex;
+  justify-items: flex-end;
+  justify-content: left;
+  width: 50%;
+  margin-top: 10px;
+  margin-left: 20px;
+  //border: 0.5px solid $PrimaryColor;
+  border-radius: 5%;
+
+  input {
+    &::placeholder {
+      color: $WhiteColor;
+      opacity: 1;
+    }
+  }
 
   @media screen and (min-width: $DesktopBreakpoint) {
-    .DropdownMenu {
-      left: -100px;     
-    }        
-
-   
-    .Dropdown-li:nth-child(7) {
-      border-bottom: none;     
-    }
-    
-    ul.DropdownMenu{
-      padding: 0px;
-    }  
-    .Dropdown-li {
-      margin-left: 0px;
-      gap: 0px;
-      padding-bottom: 3px;
-    }  
-    
-    .Dropdown-li:nth-child(8) {
-      border-bottom: 20px;
-    }       
-
-  }
-
-  .ContainerInputDrop {
-    display: flex;
-    justify-items: flex-end;
-    justify-content: left;
-    width: 50%;
+    width: 70%;
     margin-top: 10px;
-    margin-left: 20px;
-    //border: 0.5px solid $PrimaryColor;
-    border-radius: 5%;
-
-    input{  
-      &::placeholder {
-          color: $WhiteColor;
-          opacity: 1;
-      }
-    }
-    
-    
-  
-    @media screen and (min-width: $DesktopBreakpoint) {
-      width: 70%;
-      margin-top: 10px;
-      margin-left: 15px;
-    }
+    margin-left: 15px;
   }
-
- 
-
- 
+}

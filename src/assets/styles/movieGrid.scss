@@ -1,7 +1,7 @@
-@import './configs.scss';
+@import "./configs.scss";
 .container {
   background-color: $PrimaryColorWithOpacity;
-  background-image: url('../../assets/imagens/fundodevaflix.svg');
+  background-image: url("../../assets/imagens/fundodevaflix.svg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -12,39 +12,34 @@
     font-size: 32px;
     text-align: center;
     margin: 0rem 0 1rem;
-    //color: transparent;
 
     .query-text {
-      color: #25CBD3;
+      color: #25cbd3;
     }
   }
 
-  p.titleCategory{
+  p.titleCategory {
     color: #fff;
     font-size: 20px;
-    text-align: left;    
-    margin: auto; 
-    padding: 2px;       
-    
-    }
-
+    text-align: left;
+    margin: auto;
+    padding: 2px;
+  }
 }
 
 .movies-container {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;  
+  flex-wrap: wrap;
   padding: 0.5rem;
   margin: 0 auto;
   gap: 10px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 10px 10px,
-  rgba(0, 0, 0, 0.12) 0px -1px 5px, 
-  rgba(0, 0, 0, 0.12) 0px 4px 6px, 
-  rgba(0, 0, 0, 0.17) 0px 12px 13px, 
-  rgba(0, 0, 0, 0.09) 0px -3px 5px;
- background:rgba(0,0,0,0.55);
-  
-//tratar cada card individualmente
+    rgba(0, 0, 0, 0.12) 0px -1px 5px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  background: rgba(0, 0, 0, 0.55);
+
+  //tratar cada card individualmente
   div {
     width: 18%;
     color: #fff;
@@ -53,11 +48,9 @@
     flex-direction: column;
     justify-content: space-between;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 10px 10px,
-  rgba(0, 0, 0, 0.12) 0px -1px 5px, 
-  rgba(0, 0, 0, 0.12) 0px 4px 6px, 
-  rgba(0, 0, 0, 0.17) 0px 12px 13px, 
-  rgba(0, 0, 0, 0.09) 0px -3px 5px;
- background:rgba(0,0,0,0.55);
+      rgba(0, 0, 0, 0.12) 0px -1px 5px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    background: rgba(0, 0, 0, 0.55);
     padding: 1rem;
     border-radius: 8px;
 
@@ -68,7 +61,6 @@
     img,
     p {
       margin-bottom: 0rem;
-     
     }
 
     h2 {
@@ -76,12 +68,12 @@
     }
 
     svg {
-      color:  #f7d354;
+      color: #f7d354;
     }
 
     a {
-      background-color:  $PrimaryColor;
-      border: 2px solid  $PrimaryColor;
+      background-color: $PrimaryColor;
+      border: 2px solid $PrimaryColor;
       border-radius: 4px;
       color: #000;
       padding: 0.2rem 0.5rem;
@@ -91,152 +83,139 @@
 
       &:hover {
         background-color: transparent;
-        color:  #25CBD3;
+        color: #25cbd3;
       }
-          
     }
-    .titleCard{
+    .titleCard {
       display: none;
-  
     }
   }
 
+  .icons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    font-size: 12px;
+    width: 80px;
+    padding: 5px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    margin-left: -20px;
+    gap: 0;
+  }
 
-.icons-container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  font-size: 12px;
-  width: 80px;
-  padding: 5px;
-  margin-top: 8px;
-  margin-bottom: 8px;
-  margin-left: -20px;
-  gap: 0;
-}
+  .star-icon {
+    margin-right: 0.5rem;
+    width: 18px;
+    height: 18px;
+    font-size: 15px;
+  }
 
-.star-icon {
-  margin-right: 0.5rem;
-  width: 18px; 
-  height: 18px;
-  font-size: 15px;
-}
+  button.like-button svg,
+  button.dislike-button svg {
+    width: 10px;
+    height: 10px;
+  }
 
-button.like-button svg,
-button.dislike-button svg {
-  width: 10px;
-  height: 10px;
-}
-
-button.like-button,
-button.dislike-button {
-  border: none;
-  background: none;
-  cursor: pointer;
-  margin: 0 0.2rem;
-}
-
+  button.like-button,
+  button.dislike-button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    margin: 0 0.2rem;
+  }
 }
 
 @media screen and (min-width: $DesktopBreakpoint) {
-
-  .movies-container{
+  .movies-container {
     width: 12%;
-  
-
   }
   .container {
     width: 100%;
-    
-  
+
     h2.title {
       color: #fff;
       font-size: 2rem;
       text-align: center;
       margin: 6rem 0 1rem;
-  
+
       .query-text {
-        color: #25CBD3;
+        color: #25cbd3;
       }
     }
-  
-     p.titleCategory{
+
+    p.titleCategory {
       color: #fff;
       font-size: 32px;
       text-align: left;
-      margin-left: 2%;     
+      margin-left: 2%;
       padding: 8px;
-      }
-      .icons-container{
-        display: flex;     
-        justify-content:space-evenly;
-        flex-direction: row;
-        font-size: 16px;
-        width: 100%;
-        margin-left: 1px;
-        padding: 2px;
-      }
-     
-      
-      button.like-button svg,
-      button.dislike-button svg {
-        width: 20px;
-        height: 20px;
-        margin-top: -5px;
-        gap: 10px;        
-      }
-      
-      button.like-button,
-      button.dislike-button {
-        border: none;
-        background: none;
-        cursor: pointer;
-        margin: 0 0.2rem;
-       
-      }   
-          
+    }
+    .icons-container {
+      display: flex;
+      justify-content: space-evenly;
+      flex-direction: row;
+      font-size: 16px;
+      width: 100%;
+      margin-left: 1px;
+      padding: 2px;
+    }
+
+    button.like-button svg,
+    button.dislike-button svg {
+      width: 20px;
+      height: 20px;
+      margin-top: -5px;
+      gap: 10px;
+    }
+
+    button.like-button,
+    button.dislike-button {
+      border: none;
+      background: none;
+      cursor: pointer;
+      margin: 0 0.2rem;
+    }
   }
-  
-  
-.movies-container{
+
+  .movies-container {
     display: flex;
-    //justify-content: space-evenly;   
-    flex-wrap: wrap;   
+    //justify-content: space-evenly;
+    flex-wrap: wrap;
     padding: 1rem;
     width: 110%;
     margin: 0 auto;
     gap: 10px;
-  //tratar cada card individualmente
+    //tratar cada card individualmente
     div {
       width: 8%;
       color: #fff;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-      background: rgba(0, 0, 0, 1);    
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+        rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+        rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+      background: rgba(0, 0, 0, 1);
       border-radius: 8px;
-       
-  
+
       a {
         display: inline;
-        background-color:  $PrimaryColor;
-        border: 2px solid  $PrimaryColor;
+        background-color: $PrimaryColor;
+        border: 2px solid $PrimaryColor;
         border-radius: 4px;
         color: #000;
         padding: 0.5rem 0.5rem;
         text-align: center;
         font-weight: bold;
         font-size: 1rem;
-  
+
         &:hover {
           background-color: transparent;
-          color:  #25CBD3;
+          color: #25cbd3;
         }
       }
     }
   }
-
-
 }

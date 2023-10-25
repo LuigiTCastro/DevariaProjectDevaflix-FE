@@ -1,4 +1,4 @@
-@import './configs.scss';
+@import "./configs.scss";
 
 .SearchContainer,
 .IconeHome,
@@ -7,9 +7,6 @@
 .IconeSair {
   display: flex;
 }
-
-
-
 
 .ContainerFooter.ContainerNavigation {
   width: 100vw;
@@ -38,8 +35,6 @@ button.BtnDropdown {
 
 @media screen and (min-width: $DesktopBreakpoint) {
   .ContainerNavigation {
-    display:none;
+    display: none;
+  }
 }
-}
-
-

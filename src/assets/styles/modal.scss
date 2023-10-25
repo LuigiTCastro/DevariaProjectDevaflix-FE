@@ -3,9 +3,8 @@
 .container-modal {
   margin-top: 150px;
   width: auto;
- margin-left: 35px;
- margin-right: 35px;
-
+  margin-left: 35px;
+  margin-right: 35px;
 
   .modal-content {
     border-radius: 15px;
@@ -17,7 +16,7 @@
       margin-top: -800px;
       position: relative;
       z-index: auto;
-      
+
       background: $PrimaryColor;
       p {
         font-weight: 600;
@@ -151,16 +150,14 @@
   }
 
   @media screen and (min-width: $DesktopBreakpoint) {
- 
     margin-top: 150px;
     margin-left: 35%;
     margin-right: 35%;
     height: auto;
-    
+
     .modal-content {
       .modal-body {
         .content {
-          
           .avatars-scroll {
             height: 370px;
 
@@ -178,7 +175,6 @@
                 &.selected {
                   &:hover {
                     border-color: $PrimaryColor3;
-                    
                   }
                 }
               }

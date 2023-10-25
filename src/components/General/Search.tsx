@@ -32,8 +32,10 @@ const Search: React.FC = () => {
   };
 
   return (
-    <div className="SearchContainer SearchFooter">
+    <div className="SearchContainer InputWithIcon">
       <div className="SearchInputContainer">
+        <>
+        
         <input
           type="text"
           className="SearchInput"
@@ -41,6 +43,7 @@ const Search: React.FC = () => {
           value={search}
           onChange={aoDigitar}
           onKeyDown={onKey}
+          
         />
         {!loading && (
           <img
@@ -50,6 +53,7 @@ const Search: React.FC = () => {
             onClick={realizarPesquisa}
           />
         )}
+        </>
       </div>
       {loading && <div className="spinner"></div>}
     </div>
