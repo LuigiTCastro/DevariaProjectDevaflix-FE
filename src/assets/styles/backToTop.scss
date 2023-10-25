@@ -1,0 +1,23 @@
+@import './configs.scss';
+
+.backToTop {
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 20px !important;
+    background-color: rgba(94, 73, 255, 0.3); 
+    color: #fff; 
+    border: 1px solid #000000; 
+    border-radius: 50%; 
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s; 
+  
+    &:hover {
+      background-color: #5E49FF; 
+    }
+  }
+    
+  .backToTop svg {
+    width: 32px;
+    height: 32px;
+  }

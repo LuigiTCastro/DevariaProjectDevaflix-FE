@@ -7,6 +7,7 @@ import "../../assets/styles/telaprincipal.scss";
 import "../../assets/styles/movieGrid.scss";
 import { MovieCard } from "./MovieCard";
 import { SearchServices } from "../../Services/SearchServices";
+import { BackToTop } from "./BackToTop";
 
 const searchServices = new SearchServices();
 
@@ -75,6 +76,8 @@ export const TelaPrincipal = () => {
       <div className="movies-container">{renderMoviesByCategory("drama")}</div>
       <p className="titleCategory">Romance</p>
       <div className="movies-container">{renderMoviesByCategory("romance")}</div>
+
+      <BackToTop/>      
     </div>
   );
 };
