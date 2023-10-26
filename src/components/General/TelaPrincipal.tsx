@@ -20,12 +20,12 @@ export const TelaPrincipal = () => {
     const dramaMovies = await getMoviesByCategory("genre", "drama");
     const romanceMovies = await getMoviesByCategory("genre", "romance");
     const adventureMovies = await getMoviesByCategory("genre", "adventure");
-    const animationMovies = await getMoviesByCategory("genre", "animation");
-    const sciFiMovies = await getMoviesByCategory("genre", "sci-fi");
-    const fantasyMovies = await getMoviesByCategory("genre", "fantasy");
-    const musicMovies = await getMoviesByCategory("genre", "music");
-    const talkShowMovies = await getMoviesByCategory("genre", "talk-show");
-    const terrorMovies = await getMoviesByCategory("genre", "horror");
+    // const animationMovies = await getMoviesByCategory("genre", "animation");
+    // const sciFiMovies = await getMoviesByCategory("genre", "sci-fi");
+    // const fantasyMovies = await getMoviesByCategory("genre", "fantasy");
+    // const musicMovies = await getMoviesByCategory("genre", "music");
+    // const talkShowMovies = await getMoviesByCategory("genre", "talk-show");
+    // const terrorMovies = await getMoviesByCategory("genre", "horror");
 
     let allMovies = [
       ...comedyMovies,
@@ -33,12 +33,12 @@ export const TelaPrincipal = () => {
       ...dramaMovies,
       ...romanceMovies,
       ...adventureMovies,
-      ...animationMovies,
-      ...sciFiMovies,
-      ...fantasyMovies,
-      ...musicMovies,
-      ...talkShowMovies,
-      ...terrorMovies,
+      // ...animationMovies,
+      // ...sciFiMovies,
+      // ...fantasyMovies,
+      // ...musicMovies,
+      // ...talkShowMovies,
+      // ...terrorMovies,
     ];
     for (const movie of allMovies) {
       if (!imdbIdList.includes(movie.imdbID)) {
@@ -91,7 +91,7 @@ export const TelaPrincipal = () => {
       </div>
       <p className="titleCategory">Aventura</p>
       <div className="movies-container">{renderMoviesByCategory("adventure")}</div>
-      <p className="titleCategory">Animação</p>
+      {/* <p className="titleCategory">Animação</p>
       <div className="movies-container">{renderMoviesByCategory("animation")}</div>
       <p className="titleCategory">Ficção Científica</p>
       <div className="movies-container">{renderMoviesByCategory("sci-fi")}</div>
@@ -102,7 +102,7 @@ export const TelaPrincipal = () => {
       <p className="titleCategory">Talk-Show</p>
       <div className="movies-container">{renderMoviesByCategory("talk-show")}</div>
       <p className="titleCategory">Terror</p>
-      <div className="movies-container">{renderMoviesByCategory("horror")}</div>
+      <div className="movies-container">{renderMoviesByCategory("horror")}</div> */}
       <BackToTop />
     </div>
   );
