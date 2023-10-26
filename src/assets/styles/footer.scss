@@ -8,15 +8,26 @@
   display: flex;
 }
 
-.ContainerFooter.ContainerNavigation {
+.mobile{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; 
+  z-index: 100;
+}
+
+
+
+
+.ContainerFooter .ContainerNavigation {
   width: 100vw;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: $PrimaryColor3;
+  background-color: $WhiteColor;
   border-top: 0.5px solid $PrimaryColor5;
-  padding: 30px;
+  padding: 5px;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -35,6 +46,9 @@ button.BtnDropdown {
 
 @media screen and (min-width: $DesktopBreakpoint) {
   .ContainerNavigation {
+    display: none;
+  }
+  .mobile{
     display: none;
   }
 }

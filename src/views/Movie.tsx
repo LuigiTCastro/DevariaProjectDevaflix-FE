@@ -50,17 +50,7 @@ export const Movie: React.FC = () => {
     getMovie(imdbID);
   }, [imdbID]);
 
-  /*const renderTrailers = (trailers: string[]) => {
-    console.log(trailers);
-    return trailers.map((trailer) => (
-      <iframe
-        width="420"
-        height="315"
-        src={trailer}
-        title={`Trailer `}
-      ></iframe>
-    ));
-  };*/
+
   const renderTrailers = (trailers: string[]) => {
     console.log(trailers);
     if (trailers.length > 0) {
@@ -110,11 +100,19 @@ export const Movie: React.FC = () => {
             <div>
               {trailers && trailers.length > 0 && (
                 <div>
-                  <p>Trailers</p>
-                  <div className="Trailers">{renderTrailers(trailers)}</div>
+                  {/* <p>Trailers</p> */}
+                  <p>Trailer</p>
+                  {/* <div className="Trailers">{renderTrailers(trailers)}</div> */}
+                  <iframe
+                    width="420"
+                    height="315"
+                    src={trailers[0]}
+                    title={`Trailer `}
+                    allowFullScreen
+                  ></iframe>
                 </div>
               )}
-            </div>
+            </div>
             <button
               className="btnHeaderSair"
               type="button"
