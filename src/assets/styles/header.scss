@@ -50,11 +50,12 @@
 
     .ContainerNavigation {
       display: flex;
-      width: 40%;
+      width: 50%;
       margin-right: 0%;
       align-items: center;
       justify-content: space-evenly;
-      margin-left: -70px;
+     // margin-left: -70px;
+     margin-left: 80px;
       gap: 15px;
 
       .SearchContainer,
