@@ -121,12 +121,22 @@
     cursor: pointer;
     margin: 0 0.2rem;
   }
+
+    .details-icon {
+      justify-content: center;
+      align-items: center;
+      font-size: 15px;
+      width: 100px;
+      padding-top: 4px;
+      padding-bottom: 4px;
+    } // luigi: criei
 }
 
 @media screen and (min-width: $DesktopBreakpoint) {
   .movies-container {
     width: 12%;
   }
+  
   .container {
     width: 100%;
 
@@ -149,15 +159,18 @@
       padding: 8px;
       margin-top: 10px;
     }
+
     .icons-container {
       display: flex;
       justify-content: space-evenly;
       flex-direction: row;
-      font-size: 16px;
+      font-size: 13.5px; // luigi: alterado de 16 para 13
       width: 100%;
       margin-left: 1px;
       padding: 2px;
     }
+
+    
 
     button.like-button svg,
     button.dislike-button svg {

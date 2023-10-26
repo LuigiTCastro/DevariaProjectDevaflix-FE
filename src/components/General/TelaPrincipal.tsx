@@ -23,12 +23,26 @@ export const TelaPrincipal = () => {
     const actionMovies = await getMoviesByCategory("genre", "action");
     const dramaMovies = await getMoviesByCategory("genre", "drama");
     const romanceMovies = await getMoviesByCategory("genre", "romance");
+    const adventureMovies = await getMoviesByCategory("genre", "adventure");
+    const animationMovies = await getMoviesByCategory("genre", "animation");
+    const sciFiMovies = await getMoviesByCategory("genre", "sci-fi");
+    const fantasyMovies = await getMoviesByCategory("genre", "fantasy");
+    const musicMovies = await getMoviesByCategory("genre", "music");
+    const talkShowMovies = await getMoviesByCategory("genre", "talk-show");
+    const terrorMovies = await getMoviesByCategory("genre", "horror");
 
     let allMovies = [
       ...comedyMovies,
       ...actionMovies,
       ...dramaMovies,
       ...romanceMovies,
+      ...adventureMovies,
+      ...animationMovies,
+      ...sciFiMovies,
+      ...fantasyMovies,
+      ...musicMovies,
+      ...talkShowMovies,
+      ...terrorMovies,
     ];
     for (const movie of allMovies) {
       if(!imdbIdList.includes(movie.imdbID)) {
@@ -76,6 +90,20 @@ export const TelaPrincipal = () => {
       <div className="movies-container">{renderMoviesByCategory("drama")}</div>
       <p className="titleCategory">Romance</p>
       <div className="movies-container">{renderMoviesByCategory("romance")}</div>
+      <p className="titleCategory">Aventura</p>
+      <div className="movies-container">{renderMoviesByCategory("adventure")}</div>
+      <p className="titleCategory">Animação</p>
+      <div className="movies-container">{renderMoviesByCategory("animation")}</div>
+      <p className="titleCategory">Ficção Científica</p>
+      <div className="movies-container">{renderMoviesByCategory("sci-fi")}</div>
+      <p className="titleCategory">Fantasia</p>
+      <div className="movies-container">{renderMoviesByCategory("fantasy")}</div>
+      <p className="titleCategory">Musical</p>
+      <div className="movies-container">{renderMoviesByCategory("music")}</div>
+      <p className="titleCategory">Talk-Show</p>
+      <div className="movies-container">{renderMoviesByCategory("talk-show")}</div>
+      <p className="titleCategory">Terror</p>
+      <div className="movies-container">{renderMoviesByCategory("horror")}</div>
 
       <BackToTop/>      
     </div>

@@ -118,7 +118,7 @@ export const MovieCard: React.FC<MovieCardProps> = ({ movie, showLink = true }) 
       <p className="titleCard">{movie.translatedTitle}</p>
       <img src={movie.poster == "N/A" ? imgPosterNotFound : movie.poster} alt={movie.title} />
       <div className="icons-container">
-        <FaStar className="star-icon" /> {movie.imdbRating != 0 ? movie.imdbRating : "N/A"}
+        <FaStar className="star-icon"/> {movie.imdbRating != 0 ? movie.imdbRating : "N/A"}
         {isOnMyPage() && (
           <>
             <button className="like-button" onClick={handleLikeToggle}>
@@ -129,9 +129,9 @@ export const MovieCard: React.FC<MovieCardProps> = ({ movie, showLink = true }) 
             </button>
           </>
         )}
-        <span>{(ratingObj.percentageLikes)*100}%</span>
+        <span className="percentage-icon">{(ratingObj.percentageLikes)*100}%</span> {/* luigi: criei a className */}
       </div>
-      {showLink && <Link to={`/movie/${movie.imdbID}`}>Detalhes</Link>}
+      {showLink && <Link to={`/movie/${movie.imdbID}`} className="details-icon">Detalhes</Link>}
     </div>   
   );
 }; 

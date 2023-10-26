@@ -11,8 +11,12 @@
 
   .star-icon {
     margin-right: 0.5rem;
-    width: 12px;  
+    width: 12px;
     height: 12px;  
+  }
+
+  .percentage-icon {
+    font-size: 14px; // luigi: criei
   }
 
   button.like-button,
@@ -36,8 +40,8 @@
 
     .star-icon {
       margin-right: 0.5rem;
-      width: 13px; // alterado de 18 para 13 
-      height: 13px;  // alterado de 18 para 13
+      width: 12px; // alterado de 18 para 12
+      height: 12px;  // alterado de 18 para 12
     }
   }
 }
