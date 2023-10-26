@@ -64,7 +64,7 @@
     }
 
     svg {
-      color: #f7d354;
+      color: $PrimaryColor4;
     }
 
     a {
@@ -79,7 +79,7 @@
 
       &:hover {
         background-color: transparent;
-        color: #25cbd3;
+        color: $PrimaryColor4;
       }
     }
     .titleCard {
@@ -121,6 +121,15 @@
     cursor: pointer;
     margin: 0 0.2rem;
   }
+
+  .details-icon {
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    width: 100px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
 }
 
 @media screen and (min-width: $DesktopBreakpoint) {
@@ -153,7 +162,7 @@
       display: flex;
       justify-content: space-evenly;
       flex-direction: row;
-      font-size: 16px;
+      font-size: 13.5px;
       width: 100%;
       margin-left: 1px;
       padding: 2px;
@@ -161,8 +170,8 @@
 
     button.like-button svg,
     button.dislike-button svg {
-      width: 20px;
-      height: 20px;
+      width: 13px;
+      height: 13px;
       margin-top: -5px;
       gap: 10px;
     }
@@ -210,7 +219,7 @@
 
         &:hover {
           background-color: transparent;
-          color: #25cbd3;
+          color: $PrimaryColor4;
         }
       }
     }

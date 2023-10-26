@@ -129,7 +129,7 @@ export const MovieCard: React.FC<MovieCardProps> = ({ movie, showLink = true }) 
             </button>
           </>
         )}
-        <span>{(ratingObj.percentageLikes)*100}%</span>
+        <span className="percentage-icon">{(ratingObj.percentageLikes)*100}%</span>
       </div>
       {showLink && <Link to={`/movie/${movie.imdbID}`}>Detalhes</Link>}
     </div>   
