@@ -18,7 +18,7 @@
   z-index: 100;
   background-color: $WhiteColor;
   align-items: center;
-  justify-content: center;
+  justify-content: justify;
   border-bottom: 0.5px solid $GreyColor;
   gap: 80px;
 
@@ -34,6 +34,7 @@
   button.BtnDropdown {
     display: flex;
     align-items: center;
+    // margin-right: 50px;
   }
 
 
@@ -45,16 +46,16 @@
 
     .ImgLogo {
       width: 15%;
-      margin-left: 4%;
+      margin-left: 7%; // mudei de 4 para 7
     }
 
     .ContainerNavigation {
       display: flex;
-      width: 40%;
+      width: 50%; // mudei de 40 para 50
       margin-right: 0%;
       align-items: center;
       justify-content: space-evenly;
-      margin-left: -70px;
+      margin-left: 80px; // mudei de -70 para 80
       gap: 15px;
 
       .SearchContainer,
