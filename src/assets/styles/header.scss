@@ -12,8 +12,10 @@
   position: fixed;
   top: 0;
   left: 0;
+  right: 0;
   display: flex;
   width: 100%;
+  z-index: 100;
   background-color: $WhiteColor;
   align-items: center;
   justify-content: center;
@@ -31,12 +33,14 @@
   }
   button.BtnDropdown {
     display: flex;
+    align-items: center;
   }
+
 
   @media screen and (min-width: $DesktopBreakpoint) {
     width: 100vw;
     //justify-content: space-between;
-    padding: 20px 0;
+    padding: 10px 0;
     gap: 100px;
 
     .ImgLogo {

@@ -51,6 +51,7 @@
       p {
         margin-bottom: 0.55rem;
         font-size: 1rem;
+        max-height: 175px;
       }
 
       h2 {
@@ -97,6 +98,9 @@
     justify-content: center;
     text-align: center;
   }
+  .movie-card img{
+    max-height: 175px;
+  }
 
   .containerMovie .movie-page {
     width: 50%;
@@ -106,6 +110,7 @@
     border-radius: 2%;
     width: 350px;
     height: 400px;
+   
   }
   .movie-page {
     padding: 35%;
