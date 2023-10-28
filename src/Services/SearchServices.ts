@@ -2,6 +2,12 @@
 import { HttpApiServices } from "./HttpApiServices";
 
 export class SearchServices extends HttpApiServices {
+    
+    async findAll(){
+        const result = await this.get(`/search/genres`);
+        return result.data;
+    }
+
     async title(title: string) {
         return await this.get(`/search/title/?title=${title}`);
     }
