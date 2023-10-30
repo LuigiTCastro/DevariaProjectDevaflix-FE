@@ -8,7 +8,7 @@ import { SearchServices } from "../../Services/SearchServices";
 
 const searchServices = new SearchServices();
 
-interface MovieCardProps {
+export interface MovieCardProps {
   movie: {
     _id:string;
     imdbID: string;

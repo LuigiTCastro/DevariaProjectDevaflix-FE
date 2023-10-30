@@ -82,7 +82,7 @@
     }
 
     a {
-      color: $PrimaryColor3;
+      color: $PrimaryColor;
       font-family: $FontBold;
       text-decoration: underline;
       cursor: pointer;
@@ -151,6 +151,12 @@
 
         button {
           height: 50px;
+        }
+        a {
+          color: $PrimaryColor3;
+          font-family: $FontBold;
+          text-decoration: underline;
+          cursor: pointer;
         }
       }
     }
