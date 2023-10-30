@@ -66,11 +66,11 @@ export const TelaPrincipal = () => {
   const renderMoviesByCategory = () => {
     return selectedGenres.map((category) => (
       <div key={category}>
-        <h2 className="titleCategory">{category}</h2>
+        <p className="titleCategory">{category}</p>
         <div className="movies-container">
           {topMovies
             .sort((a, b) => b.imdbRating - a.imdbRating)
-            // .filter((movie) => movie.genre.toLowerCase().includes(category))
+            .filter((movie) => movie.genre.includes(category))
             .slice(0, 9)
             .map((movie) => <MovieCard key={movie.imdbID} movie={movie} />)}
         </div>
@@ -80,7 +80,11 @@ export const TelaPrincipal = () => {
 
   return (
     <div className="container">
-      
+      <h2 className="title">       
+
+
+
+      </h2>
       {renderMoviesByCategory()}
       <BackToTop/>
     </div>
