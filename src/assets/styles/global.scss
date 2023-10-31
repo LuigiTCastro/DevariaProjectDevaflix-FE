@@ -22,7 +22,11 @@
 
 html,
 body {
-  // background-image: url("../../assets/imagens/fundodevaflix.svg");
+  background-color: $PrimaryColorWithOpacity;
+  background-image: url("../../assets/imagens/fundodevaflix.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   height: 100%;
   margin: 0;
 }

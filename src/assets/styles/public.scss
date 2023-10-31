@@ -1,13 +1,19 @@
 @import "./configs.scss";
 
-.ContainerPublic {
-  
-  width: 85%;
+.ContainerPublic {  
+  width: 75%;
   display: flex;
-  flex: 1;
+  padding: 25px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+  rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+  rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+background: rgba(0, 0, 0, 0.55);
+background-image: none;
+
+ 
 
   .logo {
     margin-bottom: 20px;
@@ -55,6 +61,7 @@
       border-top: 0px;
       border-left: 0px;
       border-right: 0px;
+    
 
       &.focus {
         border-bottom-color: $PrimaryColor;
@@ -69,7 +76,15 @@
         display: flex;
         align-items: center;
         width: 100%;
+        background: transparent;
+
+        &::placeholder {
+          color:$WhiteColor;
+          opacity: 1;
+        }
+       
       }
+
     }
   }
 
@@ -78,19 +93,21 @@
     margin-top: 24px;
 
     p {
-      color: $GreyColor1; //
+      color: $WhiteColor; //
       margin: 0px 0px 2px;
     }
 
     a {
-      color: $PrimaryColor;
+      color: $PrimaryColor3;
       font-family: $FontBold;
       text-decoration: underline;
       cursor: pointer;
     }
   }
+}
 
   @media screen and (min-width: $DesktopBreakpoint) {
+    .ContainerPublic {  
     width: 80%;
     height: 90%;
     //background-color: $WhiteColor;
@@ -99,6 +116,8 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+  
+    
 
     &.register {
       .logo {
@@ -121,6 +140,7 @@
       &.success {
         max-width: none;
       }
+    }
     }
 
     form {
@@ -159,7 +179,9 @@
           text-decoration: underline;
           cursor: pointer;
         }
-      }
+      }    
+    
     }
-  }
 }
+
+
